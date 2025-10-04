@@ -7,8 +7,8 @@
     <Slider/>
     <div class="main-container">
         <BrandList/>
-        <Visitit />
-        <MysteryBox/>
+<!--        <Visitit />-->
+<!--        <MysteryBox/>-->
         <div class="products">
             <ProductCardDB v-for="product in products" :key="product.id" :product="product" />
         </div>
@@ -33,12 +33,10 @@ import Footer from "@/Components/Footer.vue";
 import ProductCardDB from "@/Components/ProductCardDB.vue";
 import SectionCom from "@/Components/SectionCom.vue";
 import BrandList from "../Components/BrandList.vue";
-import MysteryBox from "../Components/MysteryBox.vue";
 
 export default {
     name: 'Home',
     components: {
-        MysteryBox,
         BrandList,
         SectionCom,
         ProductCardDB,
@@ -85,7 +83,7 @@ export default {
                 price_max: this.filters.price_max ?? 100000,
             }).toString();
 
-            fetch(`/products/chips?${params}`)
+            fetch(`/products/headlights?${params}`)
                 .then((response) => {
                     if (!response.ok) {
                         throw new Error(`HTTP error! Status: ${response.status}`);

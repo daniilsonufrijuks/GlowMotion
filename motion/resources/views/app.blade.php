@@ -2,16 +2,16 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
-    <meta name="author" content="daniilsonufrijuks, ralfsmigals, danilavasiljevs, patricijagriniceva">
-    <meta name="description" content="Uniq snacks">
+    <meta name="author" content="darius">
+    <meta name="description" content="Cars, car world, car repair, car components, lt">
     <meta http-equiv="refresh" content="180">
-    <meta name="keywords" content="snacks, mystery box, meals">
+    <meta name="keywords" content="Cars, car world, car repair, car components, lt">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <title>Skebob</title>
+    <title>GlowMotion</title>
 
-    <link rel="icon" type="image/png" href="{{ asset('skebob.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('.png') }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
 

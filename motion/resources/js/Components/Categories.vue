@@ -4,7 +4,7 @@
             <div class="categories-header">
                 <h2 class="categories-title">Shop by Category</h2>
                 <p class="categories-subtitle">
-                    Explore our wide variety of international snacks and treats from around the world
+                    Explore our wide variety of lights
                 </p>
             </div>
 
@@ -55,24 +55,6 @@
                 </div>
             </div>
 
-            <!-- Featured Categories Banner -->
-            <div class="featured-banner">
-                <div class="banner-content">
-                    <div class="banner-text">
-                        <h3 class="banner-title">Can't decide? Try our Mystery Boxes!</h3>
-                        <p class="banner-subtitle">Let us surprise you with a curated selection from multiple categories</p>
-                    </div>
-                    <button
-                        @click="handleMysteryBoxClick"
-                        class="banner-button"
-                    >
-                        <svg class="banner-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
-                        </svg>
-                        Explore Mystery Boxes
-                    </button>
-                </div>
-            </div>
         </div>
     </section>
 </template>
@@ -83,75 +65,39 @@ import { ref } from 'vue';
 const categories = ref([
     {
         id: 1,
-        name: "CHIPS",
-        description: "Crispy and crunchy chips from around the world with unique flavors",
-        image: "https://images.unsplash.com/photo-1633536705882-d331e8d1858c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwb3RhdG8lMjBjaGlwcyUyMHNuYWNrcyUyMGNvbG9yZnVsfGVufDF8fHx8MTc1Nzc3MDcyNHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-        route: "/chips",
-        itemCount: 150,
-        brands: 25
-    },
-    {
-        id: 2,
-        name: "CHOCOLATES",
-        description: "Premium chocolates and cocoa treats from artisan chocolatiers worldwide",
-        image: "https://images.unsplash.com/photo-1702743692629-b11e94c63b0a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaG9jb2xhdGUlMjBiYXJzJTIwY2FuZHklMjBzd2VldHxlbnwxfHx8fDE3NTc3NzA3Mjd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-        route: "/chocolates",
-        itemCount: 120,
-        brands: 18
-    },
-    {
-        id: 3,
-        name: "DRINKS",
-        description: "Refreshing beverages and unique drinks you won't find anywhere else",
-        image: "https://images.unsplash.com/photo-1634825881542-9bd54ca437ea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbmVyZ3klMjBkcmlua3MlMjBiZXZlcmFnZXMlMjBjb2xvcmZ1bHxlbnwxfHx8fDE3NTc3NzA3Mjl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-        route: "/drinks",
-        itemCount: 80,
-        brands: 15
-    },
-    {
-        id: 4,
-        name: "NUTS",
-        description: "Premium nuts and trail mixes packed with nutrition and flavor",
-        image: "https://images.unsplash.com/photo-1671981200629-014c03829abb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaXhlZCUyMG51dHMlMjBzbmFja3MlMjBoZWFsdGh5fGVufDF8fHx8MTc1Nzc3MDczMnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-        route: "/nuts",
-        itemCount: 90,
-        brands: 12
-    },
-    {
-        id: 5,
-        name: "BISCUITS",
-        description: "Delicious biscuits and cookies with traditional and modern flavors",
-        image: "https://images.unsplash.com/photo-1657021717831-73211ff92daf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiaXNjdWl0cyUyMGNvb2tpZXMlMjBzbmFja3N8ZW58MXx8fHwxNzU3NzcwNzM0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-        route: "/biscuits",
-        itemCount: 110,
+        name: "HEADLIGHTS",
+        description: "Front headlights for multiple car brands with LED, Xenon, and Halogen options",
+        image: "/images/categories/headlights.jpg",
+        route: "/category/headlights",
+        itemCount: 500,
         brands: 20
     },
     {
-        id: 6,
-        name: "FRUIT SNACKS",
-        description: "Natural and artificial fruit snacks bursting with sweet flavors",
-        image: "https://images.unsplash.com/photo-1599738675654-125cf46f3b69?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmcnVpdCUyMHNuYWNrcyUyMGd1bW15JTIwY29sb3JmdWx8ZW58MXx8fHwxNzU3NzcwNzM3fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-        route: "/fruitsnacks",
-        itemCount: 75,
+        id: 2,
+        name: "TAILLIGHTS",
+        description: "Modern and classic taillights for various makes and models",
+        image: "/images/categories/taillights.jpg",
+        route: "/category/taillights",
+        itemCount: 340,
+        brands: 16
+    },
+    {
+        id: 3,
+        name: "FOG LIGHTS",
+        description: "Fog lights designed for better visibility and safety in tough conditions",
+        image: "/images/categories/foglights.jpg",
+        route: "/category/foglights",
+        itemCount: 140,
+        brands: 9
+    },
+    {
+        id: 4,
+        name: "INTERIOR LIGHTING",
+        description: "LED interior kits, ambient lighting and dome lights for premium feel",
+        image: "/images/categories/interior-lights.jpg",
+        route: "/category/interior",
+        itemCount: 180,
         brands: 14
-    },
-    {
-        id: 7,
-        name: "CANDY",
-        description: "Sweet candies and confections from every corner of the globe",
-        image: "https://images.unsplash.com/photo-1476401113995-b136bdfce591?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2xvcmZ1bCUyMGNhbmR5JTIwc3dlZXRzJTIwZ3VtbXl8ZW58MXx8fHwxNzU3NzcwNzM5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-        route: "/candy",
-        itemCount: 130,
-        brands: 22
-    },
-    {
-        id: 8,
-        name: "SNACK BOXES",
-        description: "Curated snack boxes featuring the best selections from multiple categories",
-        image: "https://images.unsplash.com/photo-1736788268738-79afa3312430?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzbmFjayUyMGJveCUyMHN1YnNjcmlwdGlvbiUyMHZhcmlldHl8ZW58MXx8fHwxNzU3NzcwNzQzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-        route: "/snackboxes",
-        itemCount: 45,
-        brands: 8
     }
 ]);
 

@@ -43,7 +43,7 @@ import ProductCard from "@/Components/ProductCard.vue";
 import ProductCardDB from "@/Components/ProductCardDB.vue";
 
 export default {
-    name: 'ComponentsPage',
+    name: 'BMW',
     components: {
         ProductCardDB,
         ProductCard,
@@ -84,17 +84,6 @@ export default {
         },
     },
     methods: {
-        // fetchProducts() {
-        //     fetch('/products/laptops') // Adjust API endpoint if necessary
-        //         .then((response) => response.json())
-        //         .then((data) => {
-        //             console.log('Fetched products:', data);
-        //             this.products = data;
-        //         })
-        //         .catch((error) => {
-        //             console.error('Error fetching products:', error);
-        //         });
-        // },
         fetchProducts() {
             const params = new URLSearchParams({
                 price_min: this.filters.price_min ?? 0,
@@ -102,10 +91,7 @@ export default {
                 // sort_order: this.sortOrder,
             }).toString();
 
-            // https://www.french-corner-shop.com/en/welcome/803-pepito-chocolate-flavored-cookies.html
-            // https://buysnacksuk.com/products/foxs-milk-chocolate-viennese-biscuit-sandwich-by-foxs-120g-pack?srsltid=AfmBOoonwzHa5IcqmWsO_UqDAjvyNIzO6tscz13FjXIMbP-nwfUidOt5
-            // https://premiumco.com.au/products/ito-seika-languly-matcha-biscuits-161-g?srsltid=AfmBOorCjcKCI2ZoAnzk1n8ZDvJ39BfgG7go-ML24-2swHa5nrm43u5F
-            fetch(`/products/biscuits?${params}`)
+            fetch(`/products/headlights?${params}`)
                 .then((response) => {
                     if (!response.ok) {
                         throw new Error(`HTTP error! Status: ${response.status}`);

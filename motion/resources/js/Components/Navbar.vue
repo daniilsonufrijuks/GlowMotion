@@ -43,14 +43,13 @@ const goToUserPage = () => {
     <nav>
         <a href="/" style="text-decoration:none!important;">
             <div class="logo">
-                <h1><a>SKEBOB</a></h1>
+                <h1><a>GlowMotion</a></h1>
                 <img class="imglogo" src="/skebob.png" alt="Skebob logo"/>
             </div>
         </a>
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/market">Market</a></li>
-            <li><a href="/gifts">Gifts</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/contacts">Contacts</a></li>
             <li><a href="/tutor">Blog</a></li>
@@ -88,7 +87,6 @@ const goToUserPage = () => {
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/market">Market</a></li>
-            <li><a href="/gifts">Gifts</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/contacts">Contacts</a></li>
             <li><a href="/tutor">Blog</a></li>
@@ -141,7 +139,7 @@ const goToUserPage = () => {
     justify-content: center;
 }
 nav {
-    background-color: #d87220;
+    background-color: #420d65;
     padding: 5px 2%;
     display: flex;
     justify-content: space-between;
@@ -201,7 +199,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #703505;
+    background-color: #621991;
 }
 
 .hamburger {
@@ -282,7 +280,7 @@ nav ul li a:hover {
 }
 
 .menubar ul li a:hover {
-    background-color: #e3985a;
+    background-color: #420d65;
 }
 
 .imglogo {

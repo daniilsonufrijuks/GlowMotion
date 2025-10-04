@@ -72,17 +72,9 @@ Route::get('/registration', function () {
     return Inertia::render('Auth/Registration');
 })->name('registration');
 
-Route::get('/chips', function () {
-    return Inertia::render('Chips');
-})->name('chips');
-
-Route::get('/chocolates', function () {
-    return Inertia::render('Chocolates');
-})->name('chocolates');
-
-Route::get('/drinks', function () {
-    return Inertia::render('Drinks');
-})->name('drinks');
+Route::get('/headlights', function () {
+    return Inertia::render('Headlights');
+})->name('headlights');
 
 Route::get('/cart', function () {
     return Inertia::render('Cart');
@@ -104,33 +96,11 @@ Route::get('/tutor', function () {
 //    return Inertia::render('Quiz');
 //})->name('quiz');
 
-Route::get('/nuts', function () {
-    return Inertia::render('Nuts');
-})->name('nuts');
 
-Route::get('/biscuits', function () {
-    return Inertia::render('Biscuits');
-})->name('biscuits');
-
-Route::get('/fruitsnacks', function () {
-    return Inertia::render('Fruitsnacks');
-})->name('fruitsnacks');
-
-Route::get('/candy', function () {
-    return Inertia::render('Candy');
-})->name('candy');
-
-Route::get('/snackboxes', function () {
-    return Inertia::render('Snackboxes');
-})->name('snackboxes');
 
 Route::get('/faq', function () {
     return Inertia::render('FAQ');
 })->name('faq');
-
-Route::get('/gifts', function () {
-    return Inertia::render('Gifts');
-})->name('gifts');
 
 
 
@@ -199,15 +169,7 @@ Route::post('/logout', function () {
 
 
 // for getting products for pages for categories
-Route::get('/products/chips', [ProductsController::class, 'getChipsProducts']);
-Route::get('/products/chocolates', [ProductsController::class, 'getChocolatesProducts']);
-Route::get('/products/drinks', [ProductsController::class, 'getDrinksProducts']);
-Route::get('/products/nuts', [ProductsController::class, 'getNutsProducts']);
-
-Route::get('/products/biscuits', [ProductsController::class, 'getBiscuitsProducts']);
-Route::get('/products/fruitsnacks', [ProductsController::class, 'getFruitsnacksProducts']);
-Route::get('/products/candy', [ProductsController::class, 'getCandyProducts']);
-Route::get('/products/snackboxes', [ProductsController::class, 'getSnackboxesProducts']);
+Route::get('/products/headlights', [ProductsController::class, 'getHeadlightsProducts']);
 
 Route::get('/products/{id}', [ProductsController::class, 'show']);
 
