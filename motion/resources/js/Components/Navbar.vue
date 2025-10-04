@@ -44,7 +44,7 @@ const goToUserPage = () => {
         <a href="/" style="text-decoration:none!important;">
             <div class="logo">
                 <h1><a>GlowMotion</a></h1>
-                <img class="imglogo" src="/skebob.png" alt="Skebob logo"/>
+<!--                <img class="imglogo" src="/skebob.png" alt="Skebob logo"/>-->
             </div>
         </a>
         <ul>
