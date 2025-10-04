@@ -2,14 +2,11 @@
 import { ref } from "vue";
 
 const brands = ref([
-    { name: "Coca-Cola", logo: "/images/front/cola.png" },
-    { name: "Pepsi", logo: "/images/front/pepsi.png" },
-    { name: "Fanta", logo: "/images/front/fanta.png" },
-    { name: "Sprite", logo: "/images/front/sprite.png" },
-    { name: "Oreo", logo: "/images/front/oreo.png" },
-    { name: "Feastables", logo: "/images/front/feast.png" },
-    { name: "Doritos", logo: "/images/front/doritos.png" },
-    { name: "Pringles", logo: "/images/front/pringles.png" },
+    { name: "Audi", logo: "/images/front/audi.png" },
+    { name: "Mercedes", logo: "/images/front/merc.jpg" },
+    { name: "Bmw", logo: "/images/front/bmw.png" },
+    { name: "Volkswagen", logo: "/images/front/volks.png" },
+    { name: "Dodge", logo: "/images/front/dodge.png" },
 ]);
 </script>
 
