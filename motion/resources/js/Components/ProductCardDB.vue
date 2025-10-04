@@ -10,7 +10,7 @@
         <div class="product-card">
             <img :src="product.image" style="justify-content: center; align-items: center" class="product-img" alt="Product 4">
             <h5>{{ product.name }}</h5>
-            <p>{{ product.ingredients }}.</p>
+            <p>{{ product.description }}.</p>
             <p><strong>Price:</strong> {{ product.price }}</p>
             <button  @click="goToProductPage(this.product.id)">Buy</button>
         </div>
@@ -134,7 +134,7 @@ export default {
 
 .product-card button {
     padding: 10px 20px;
-    background-color: #d87220;
+    background-color: #7015ac;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -142,7 +142,7 @@ export default {
 }
 
 .product-card button:hover {
-    background-color: #d87220;
+    background-color: #821bc5;
 }
 
 

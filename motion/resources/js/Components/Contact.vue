@@ -273,7 +273,7 @@ const submit = () => {
 .form-textarea:focus {
     outline: none;
     border-color: transparent;
-    box-shadow: 0 0 0 2px #d87220;
+    box-shadow: 0 0 0 2px #420d65;
 }
 
 .form-textarea {
@@ -283,7 +283,7 @@ const submit = () => {
 
 .submit-button {
     width: 100%;
-    background-color: #d87220;
+    background-color: #5a237e;
     color: white;
     padding: 0.75rem 1.5rem;
     border-radius: 0.375rem;
@@ -296,7 +296,7 @@ const submit = () => {
 }
 
 .submit-button:hover {
-    background-color: #b45c1c; /* darker orange */
+    background-color: #45096c; /* darker orange */
 }
 
 /* Contact Info Section */
@@ -339,7 +339,7 @@ const submit = () => {
 .info-icon {
     width: 1.25rem;
     height: 1.25rem;
-    color: #d87220;
+    color: #420d65;
     margin-top: 0.25rem;
     flex-shrink: 0;
 }
@@ -372,7 +372,7 @@ const submit = () => {
 
 .map-container {
     height: 16rem;
-    background: linear-gradient(to bottom right, #fed7aa, #fdba74); /* orange gradient */
+    background: linear-gradient(to bottom right, #9260b3, #723798); /* orange gradient */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -429,7 +429,7 @@ const submit = () => {
 .map-icon {
     width: 2rem;
     height: 2rem;
-    color: #d87220;
+    color: #5f1491;
     margin: 0 auto 0.5rem auto;
 }
 
@@ -495,13 +495,13 @@ const submit = () => {
 
 /* Focus and Accessibility */
 .submit-button:focus {
-    outline: 2px solid #d87220;
+    outline: 2px solid #7015ac;
     outline-offset: 2px;
 }
 
 .form-input:focus,
 .form-textarea:focus {
-    box-shadow: 0 0 0 2px #d87220;
+    box-shadow: 0 0 0 2px #7015ac;
 }
 
 /* Animation Effects */

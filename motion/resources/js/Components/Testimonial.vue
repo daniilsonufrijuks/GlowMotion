@@ -1,10 +1,38 @@
+<script setup>
+import { ref } from 'vue';
+
+const additionalTestimonials = ref([
+    {
+        id: 1,
+        text: "The LED headlights I bought completely transformed my night driving. Clear, bright, and stylish – couldn’t be happier!",
+        author: "Andreas K.",
+        role: "Verified BMW Owner",
+        rating: 5
+    },
+    {
+        id: 2,
+        text: "Great quality and fast delivery. I upgraded my Audi with new tail lights and they look amazing. Highly recommend this shop!",
+        author: "Laura P.",
+        role: "Audi A4 Driver",
+        rating: 5
+    },
+    {
+        id: 3,
+        text: "Finally found reliable fog lights for my Porsche. Installation was simple, and the light output is perfect for winter roads.",
+        author: "Markus L.",
+        role: "Porsche Cayenne Owner",
+        rating: 5
+    }
+]);
+</script>
+
 <template>
     <section class="testimonials-section">
         <div class="testimonials-container">
             <div class="testimonials-header">
                 <h2 class="testimonials-title">What Our Customers Say</h2>
                 <p class="testimonials-subtitle">
-                    Join thousands of satisfied snack lovers who have discovered their new favorites with Skebob.
+                    Thousands of drivers trust us to upgrade their cars with high-quality headlights, tail lights, and more.
                 </p>
             </div>
 
@@ -17,11 +45,10 @@
 
                         <div class="welcome-message">
                             <p class="welcome-text">
-                                Dear valued customer,<br/><br/>
-                                We are thrilled to welcome you to Skebob – your ultimate destination for unique and flavorful snacks!
-                                Whether you're craving something sweet, savory, or adventurous, our carefully curated collection is
-                                designed to satisfy every taste bud. From rare international treats to exclusive Skibob specialties,
-                                we make snacking an experience you'll love.
+                                Dear car enthusiast,<br/><br/>
+                                Welcome to <strong>GlowMotion</strong> – your trusted shop for premium car lighting solutions.
+                                From powerful LED headlights to stylish tail lights and fog lamps, we provide everything you need to enhance both safety and design.
+                                Whether you drive a BMW, Audi, Porsche, or any other brand, we’ve got the perfect upgrade for your vehicle.
                             </p>
                         </div>
 
@@ -32,8 +59,8 @@
                         </div>
 
                         <div class="testimonial-author">
-                            <p class="author-name">Skebob Snack Group</p>
-                            <p class="author-role">Official Welcome Message</p>
+                            <p class="author-name">GlowMotion Team</p>
+                            <p class="author-role">Your Lighting Experts</p>
                         </div>
                     </div>
                 </div>
@@ -64,32 +91,11 @@
     </section>
 </template>
 
-<script setup>
-import { ref } from 'vue';
-
-const additionalTestimonials = ref([
-    {
-        id: 1,
-        text: "Absolutely amazing selection! I discovered snacks I never knew existed. The mystery box was such a fun surprise!",
-        author: "Sarah M.",
-        role: "Verified Customer",
-        rating: 5
-    },
-    {
-        id: 2,
-        text: "The quality is exceptional and the international variety is incredible. Skebob has become my go-to for unique treats!",
-        author: "Mike T.",
-        role: "Verified Customer",
-        rating: 5
-    }
-]);
-</script>
-
 <style scoped>
 /* Testimonials Section Styles */
 .testimonials-section {
     padding: 4rem 0;
-    background-color: #d87220;
+    background-color: #420d65;
     color: white;
 }
 
@@ -141,7 +147,7 @@ const additionalTestimonials = ref([
 .quote-icon {
     width: 3rem;
     height: 3rem;
-    color: rgba(254, 215, 170, 1); /* orange-200 */
+    color: rgb(204, 151, 236); /* orange-200 */
     margin: 0 auto 1.5rem auto;
     display: block;
 }
@@ -167,7 +173,7 @@ const additionalTestimonials = ref([
 .star {
     width: 1.25rem;
     height: 1.25rem;
-    color: #facc15; /* yellow-400 */
+    color: #903ec6; /* yellow-400 */
     fill: currentColor;
 }
 
