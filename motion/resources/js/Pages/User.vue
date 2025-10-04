@@ -98,11 +98,14 @@
                 </div>
             </div>
         </div>
-        <Visitit />
+<!--        <Visitit />-->
         <div class="products">
             <ProductCardDB v-for="product in products" :key="product.id" :product="product" />
         </div>
-<!--        <Productsintro />-->
+
+<!--        <Testimonial />-->
+
+        <!--        <Productsintro />-->
 <!--        <Contact />-->
     </div>
     <Footer />
@@ -124,7 +127,6 @@ import ProductCardDB from "@/Components/ProductCardDB.vue";
 export default {
     name: 'Home',
     components: {
-        Roulette,
         ProductCardDB,
         Navbar,
         Visitit,
@@ -161,7 +163,7 @@ export default {
         };
     },
     mounted() {
-        // this.fetchProducts();
+        this.fetchProducts();
         this.editForm.name = this.user?.name || '';
         this.editForm.email = this.user?.email || '';
     },
@@ -183,7 +185,7 @@ export default {
                 price_max: this.filters.price_max ?? 100000,
             }).toString();
 
-            fetch(`/products/drinks?${params}`)
+            fetch(`/products/headlights?${params}`)
                 .then((response) => {
                     if (!response.ok) {
                         throw new Error(`HTTP error! Status: ${response.status}`);
