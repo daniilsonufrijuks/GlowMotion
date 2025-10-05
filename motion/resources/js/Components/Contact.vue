@@ -4,7 +4,7 @@
             <div class="contact-header">
                 <h2 class="contact-title">Get in Touch</h2>
                 <p class="contact-subtitle">
-                    Have questions about our snacks or need help with your order? We'd love to hear from you!
+                    Have questions about our cars or need help with your order? We'd love to hear from you!
                 </p>
             </div>
 
