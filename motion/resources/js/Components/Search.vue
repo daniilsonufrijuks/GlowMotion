@@ -120,11 +120,11 @@ export default {
     right: 1px;
     height: 40px;
     width: 110px;
-    background: #d87220;
+    background: #420d65;
 }
 
 .search button:hover {
-    background: #985016;
+    background: #65119c;
 }
 
 /* Suggestions list style */

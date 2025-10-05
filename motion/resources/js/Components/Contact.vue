@@ -78,8 +78,8 @@
                                 <div class="info-text">
                                     <h4 class="info-label">Address</h4>
                                     <p class="info-value">
-                                        123 Snack Street<br />
-                                        Flavor District, FD 12345<br />
+                                        123 Street<br />
+                                        Car District, FD 12345<br />
                                         United States
                                     </p>
                                 </div>
@@ -91,7 +91,7 @@
                                 </svg>
                                 <div class="info-text">
                                     <h4 class="info-label">Phone</h4>
-                                    <p class="info-value">+1 (555) 123-SNACK</p>
+                                    <p class="info-value">+1 (555) 123-CAR</p>
                                 </div>
                             </div>
 
@@ -101,7 +101,7 @@
                                 </svg>
                                 <div class="info-text">
                                     <h4 class="info-label">Email</h4>
-                                    <p class="info-value">hello@skebob.com</p>
+                                    <p class="info-value">hello@motion.com</p>
                                 </div>
                             </div>
 

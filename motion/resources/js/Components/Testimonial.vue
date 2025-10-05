@@ -16,13 +16,6 @@ const additionalTestimonials = ref([
         role: "Audi A4 Driver",
         rating: 5
     },
-    {
-        id: 3,
-        text: "Finally found reliable fog lights for my Porsche. Installation was simple, and the light output is perfect for winter roads.",
-        author: "Markus L.",
-        role: "Porsche Cayenne Owner",
-        rating: 5
-    }
 ]);
 </script>
 

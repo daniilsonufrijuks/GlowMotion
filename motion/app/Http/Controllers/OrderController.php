@@ -223,7 +223,11 @@ class OrderController extends Controller
                 ],
             ]);
 
-            return response()->json(['id' => $session->id]);
+//            return response()->json(['id' => $session->id]);
+            return response()->json([
+                'url' => $session->url,
+                'id' => $session->id,
+            ]);
 
         } catch (\Exception $e) {
             \Log::error('Stripe session creation failed: ' . $e->getMessage());

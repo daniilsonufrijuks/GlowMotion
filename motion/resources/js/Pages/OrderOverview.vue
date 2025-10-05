@@ -292,9 +292,10 @@ export default {
                 if (!stripe) {
                     throw new Error('Failed to load Stripe');
                 }
-                const { error } = await stripe.redirectToCheckout({
-                    sessionId: response.data.id
-                });
+                // const { error } = await stripe.redirectToCheckout({
+                //     sessionId: response.data.id
+                // });
+                window.location.href = response.data.url;
                 if (error) {
                     throw new Error(error.message);
                 }

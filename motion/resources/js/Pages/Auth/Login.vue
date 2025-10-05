@@ -70,7 +70,7 @@ const submit = () => {
 
 <style scoped>
 body {
-    background-color: #7e411e;
+    background-color: #420d65;
 }
 
 .imglogo {
@@ -100,7 +100,7 @@ body {
     padding: 30px;
     border-radius: 6px;
     background: #FFF;
-    outline: #d87220 solid 2px;
+    outline: #811fc1 solid 2px;
 }
 .form.signup{
     opacity: 0;
@@ -159,12 +159,12 @@ form{
 }
 .field button{
     color: #fff;
-    background-color: #985016;
+    background-color: #420d65;
     transition: all 0.3s ease;
     cursor: pointer;
 }
 .field button:hover{
-    background-color: #d87220;
+    background-color: #68179e;
 }
 .form-link{
     text-align: center;
@@ -177,7 +177,7 @@ form{
     color: #232836;
 }
 .form a{
-    color: #d87220;
+    color: #420d65;
     text-decoration: none;
 }
 .form-content a:hover{
@@ -247,10 +247,10 @@ a.google span{
     top: 20px;
     left: 20px;
     background-color: #fff;
-    color: #985016;
+    color: #420d65;
     padding: 8px 16px;
     border-radius: 6px;
-    border: 2px solid #985016;
+    border: 2px solid #420d65;
     font-weight: 500;
     text-decoration: none;
     transition: all 0.3s ease;
@@ -258,7 +258,7 @@ a.google span{
 }
 
 .back-button:hover {
-    background-color: #985016;
+    background-color: #420d65;
     color: #fff;
     cursor: pointer;
 }

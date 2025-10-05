@@ -62,7 +62,6 @@
                             <!-- Delete Account Section -->
                             <div class="row m-t-30">
                                 <div class="col-sm-12">
-                                    <h6 class="m-b-20 p-b-5 b-b-default f-w-600 text-danger">Danger Zone</h6>
                                     <p class="text-muted m-b-15">Once you delete your account, there is no going back. Please be certain.</p>
                                     <button class="btn btn-danger btn-sm" @click="confirmDelete" :disabled="deleting">
                                         <span v-if="deleting">Deleting...</span>

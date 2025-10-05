@@ -27,10 +27,10 @@
                         <span class="detail-label">Order Status:</span>
                         <span class="status-badge paid">Paid</span>
                     </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Total Amount:</span>
-                        <span class="detail-value total-amount">${{ order?.total_price?.toFixed(2) || '0.00' }}</span>
-                    </div>
+<!--                    <div class="detail-item">-->
+<!--                        <span class="detail-label">Total Amount:</span>-->
+<!--                        <span class="detail-value total-amount">${{ order?.total_price?.toFixed(2) || '0.00' }}</span>-->
+<!--                    </div>-->
                 </div>
             </div>
 
