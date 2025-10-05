@@ -7,7 +7,7 @@
     <Slider/>
     <div class="main-container">
         <BrandList/>
-<!--        <Visitit />-->
+        <Visitit />
 <!--        <MysteryBox/>-->
         <div class="products">
             <ProductCardDB v-for="product in products" :key="product.id" :product="product" />

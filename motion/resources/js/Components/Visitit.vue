@@ -3,27 +3,27 @@
     <div class="product-cards-top">
         <div class="product-card-top">
             <img src="/images/front/prod1.png" alt="Product 1">
-            <p>Best feasting chocolate!</p>
-            <button onclick="location.href='https://feastables.com/'">Visit feastables.com</button>
+            <p>Audi</p>
+            <button onclick="location.href='https://www.audi.com/en/'">Visit audi.com</button>
         </div>
 
         <div class="product-card-top">
             <img src="/images/front/prod2.png" alt="Product 2">
-            <p>Vietnamese snack special!<br>Available on website now!</p>
-            <button onclick="location.href='https://www.oishi.com.vn/san-pham'">Visit oishi.com.vn</button>
+            <p>Bmw</p>
+            <button onclick="location.href='https://www.bmw.com/en/index.html'">Visit bmw.com</button>
         </div>
 
         <div class="product-card-top">
             <img src="/images/front/prod3.png" alt="Product 3">
 <!--            <p>Top choice among customers this month.</p>-->
-            <p>Limited Edition Doritos,<br>don't miss 'em!</p>
-            <button onclick="location.href='https://www.doritos.com/'">Visit doritos.com</button>
+            <p>VW</p>
+            <button onclick="location.href='https://www.vw.com/en.html'">Visit vw.com</button>
         </div>
 
         <div class="product-card-top">
             <img src="/images/front/prod4.png" alt="Product 4">
-            <p>Special discount for a limited period.</p>
-            <button onclick="location.href='https://www.skittles.com/'">Visit skittles.com</button>
+            <p>Honda</p>
+            <button onclick="location.href='https://global.honda/en/'">Visit honda.com</button>
         </div>
     </div>
     <!-- visit this -->
@@ -87,7 +87,7 @@
 
 .product-card-top button {
     padding: 10px 20px;
-    background-color: #d87220;
+    background-color: #9a4e13;
     color: #fff;
     border: none;
     border-radius: 5px;

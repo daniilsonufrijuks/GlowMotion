@@ -4,23 +4,22 @@
             <!-- Main About Content -->
             <div class="about-content">
                 <div class="welcome-section">
-                    <h2 class="about-title">Welcome to Skebob Market</h2>
+                    <h2 class="about-title">Welcome to GlowMotion</h2>
                     <div class="title-decoration"></div>
 
                     <p class="welcome-message">
-                        Welcome to Skebob Market – your one-stop destination for unique and delicious snacks!
-                        Thank you for choosing us. We're excited to be part of your snacking journey and bring
-                        you flavors that surprise, delight, and inspire every bite.
+                        Step into the future of driving with GlowMotion — where innovation meets illumination.
+                        We design light, intelligent, and efficient vehicles that elevate every journey.
                     </p>
 
                     <p class="mission-message">
-                        Explore our carefully curated selection and discover why Skebob Market is more than
-                        just snacks – it's an experience!
+                        Experience the perfect harmony of design, performance, and sustainability.
+                        GlowMotion isn’t just about cars — it’s about moving forward with purpose and style.
                     </p>
 
                     <div class="cta-section">
                         <button class="explore-btn">
-                            <span>Start Exploring</span>
+                            <span>Explore Our Models</span>
                             <svg class="arrow-icon" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                             </svg>
@@ -31,26 +30,26 @@
                 <!-- Stats Section -->
                 <div class="stats-section">
                     <div class="stat-item">
-                        <div class="stat-number">500+</div>
-                        <div class="stat-label">Unique Snacks</div>
+                        <div class="stat-number">20+</div>
+                        <div class="stat-label">Signature Models</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">Countries</div>
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Years of Innovation</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">10K+</div>
-                        <div class="stat-label">Happy Customers</div>
+                        <div class="stat-number">15K+</div>
+                        <div class="stat-label">Happy Drivers</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">24/7</div>
-                        <div class="stat-label">Support</div>
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Electric Lineup</div>
                     </div>
                 </div>
 
                 <!-- Our Values -->
                 <div class="values-section">
-                    <h3 class="values-title">What Makes Us Special</h3>
+                    <h3 class="values-title">The GlowMotion Difference</h3>
                     <div class="values-grid">
                         <div class="value-card">
                             <div class="value-icon">
@@ -58,9 +57,9 @@
                                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                                 </svg>
                             </div>
-                            <h4 class="value-title">Premium Quality</h4>
+                            <h4 class="value-title">Modern Design</h4>
                             <p class="value-description">
-                                Every snack is carefully selected for exceptional taste and quality standards.
+                                Every GlowMotion car embodies elegance, aerodynamic precision, and minimalist beauty.
                             </p>
                         </div>
 
@@ -70,9 +69,9 @@
                                     <path fill-rule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clip-rule="evenodd"></path>
                                 </svg>
                             </div>
-                            <h4 class="value-title">Global Sourcing</h4>
+                            <h4 class="value-title">Smart Technology</h4>
                             <p class="value-description">
-                                We travel the world to bring you authentic flavors from every corner of the globe.
+                                Integrated AI systems and real-time connectivity redefine the modern driving experience.
                             </p>
                         </div>
 
@@ -82,9 +81,9 @@
                                     <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
                                 </svg>
                             </div>
-                            <h4 class="value-title">Customer Love</h4>
+                            <h4 class="value-title">Customer Passion</h4>
                             <p class="value-description">
-                                Your satisfaction is our priority. We're here to make every bite memorable.
+                                Our community drives us forward — we listen, innovate, and deliver beyond expectations.
                             </p>
                         </div>
 
@@ -94,9 +93,9 @@
                                     <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                                 </svg>
                             </div>
-                            <h4 class="value-title">Trusted Brand</h4>
+                            <h4 class="value-title">Trusted Excellence</h4>
                             <p class="value-description">
-                                Join thousands who trust Skebob for their snacking adventures and discoveries.
+                                Built on trust, quality, and innovation — GlowMotion stands for lasting performance.
                             </p>
                         </div>
                     </div>
@@ -106,9 +105,9 @@
                 <div class="company-section">
                     <div class="company-card">
                         <div class="company-content">
-                            <h3 class="company-title">Powered by Innovation</h3>
+                            <h3 class="company-title">Powered by Vision</h3>
                             <p class="company-description">
-                                Skebob Market is proudly developed and maintained by
+                                GlowMotion is proudly designed and developed by
                             </p>
                             <div class="company-brand">
                                 <div class="brand-logo">
@@ -117,8 +116,8 @@
                                     </svg>
                                 </div>
                                 <div class="brand-text">
-                                    <div class="brand-name">Braincell DEV GROUP</div>
-                                    <div class="brand-tagline">Crafting Digital Experiences</div>
+                                    <div class="brand-name">GlowMotion Labs</div>
+                                    <div class="brand-tagline">Engineering Brilliance in Motion</div>
                                 </div>
                             </div>
                         </div>
