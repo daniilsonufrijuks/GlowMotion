@@ -6,7 +6,7 @@
     <Search />
 <!--    <Slider/>-->
     <div class="main-container">
-        <Visitit />
+<!--        <Visitit />-->
         <AskedQuestions />
         <div class="products">
             <ProductCardDB v-for="product in products" :key="product.id" :product="product" />

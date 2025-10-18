@@ -90,15 +90,6 @@ const categories = ref([
         itemCount: 140,
         brands: 9
     },
-    {
-        id: 4,
-        name: "DAYTIME RUNNING LIGHTS",
-        description: "LED interior kits, ambient lighting and dome lights for premium feel",
-        image: "/images/front/DaytimeRunningLights.gif",
-        route: "/daytime",
-        itemCount: 180,
-        brands: 14
-    }
 ]);
 
 const handleCategoryClick = (category) => {

@@ -3,7 +3,7 @@
     <Search />
     <Slider />
     <div class="main-container">
-        <Visitit />
+<!--        <Visitit />-->
         <!-- Filter Inputs -->
         <div class="filters">
             <input

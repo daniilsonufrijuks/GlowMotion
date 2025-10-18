@@ -80,29 +80,6 @@ class ProductsController extends Controller
     }
 
 
-    public function getDaytimelightsProducts(Request $request): \Illuminate\Http\JsonResponse
-    {
-        //global $request;
-        $query = Product::where('category_id', '4');
-
-        // Apply filters based on query parameters
-        // Handle price_min only if not null
-        // Check if price_min is provided
-        // Apply filters only if values are not null or empty
-        if ($request->filled('price_min')) {
-            $query->where('price', '>=', $request->input('price_min'));
-        }
-
-        if ($request->filled('price_max')) {
-            $query->where('price', '<=', $request->input('price_max'));
-        }
-
-        // Fetch the filtered results
-        $products = $query->get(['id', 'name', 'price', 'description', 'image']);
-
-        return response()->json($products);
-    }
-
     public function show($id): \Illuminate\Http\JsonResponse
     {
         $products = Product::find($id, ['id', 'name', 'price', 'description', 'image', 'category_id']);

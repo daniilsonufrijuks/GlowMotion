@@ -7,7 +7,8 @@
     <Slider/>
     <div class="main-container">
         <BrandList/>
-        <Visitit />
+        <HeroSection />
+<!--        <Visitit />-->
 <!--        <MysteryBox/>-->
         <div class="products">
             <ProductCardDB v-for="product in products" :key="product.id" :product="product" />
@@ -33,10 +34,12 @@ import Footer from "@/Components/Footer.vue";
 import ProductCardDB from "@/Components/ProductCardDB.vue";
 import SectionCom from "@/Components/SectionCom.vue";
 import BrandList from "../Components/BrandList.vue";
+import HeroSection from "../Components/HeroSection.vue";
 
 export default {
     name: 'Home',
     components: {
+        HeroSection,
         BrandList,
         SectionCom,
         ProductCardDB,

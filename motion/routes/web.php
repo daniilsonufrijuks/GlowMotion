@@ -76,10 +76,6 @@ Route::get('/headlights', function () {
     return Inertia::render('Headlights');
 })->name('headlights');
 
-Route::get('/daytime', function () {
-    return Inertia::render('Daytime');
-})->name('daytime');
-
 Route::get('/foglights', function () {
     return Inertia::render('Foglights');
 })->name('foglights');
@@ -184,7 +180,6 @@ Route::post('/logout', function () {
 Route::get('/products/headlights', [ProductsController::class, 'getHeadlightsProducts']);
 Route::get('/products/taillights', [ProductsController::class, 'getTaillightslightsProducts']);
 Route::get('/products/foglights', [ProductsController::class, 'getFoglightslightsProducts']);
-Route::get('/products/daytime', [ProductsController::class, 'getDaytimelightsProducts']);
 
 Route::get('/products/{id}', [ProductsController::class, 'show']);
 

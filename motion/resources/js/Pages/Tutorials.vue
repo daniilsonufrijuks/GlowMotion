@@ -4,7 +4,7 @@
     <Search />
     <Slider/>
     <div class="main-container">
-        <Visitit />
+<!--        <Visitit />-->
         <Article/>
 <!--        <div class="video-section">-->
 <!--            <h2>Watch Our Videos</h2>-->

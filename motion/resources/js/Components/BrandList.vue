@@ -50,6 +50,8 @@ const brands = ref([
     text-align: center;
     transition: transform 0.2s ease;
     cursor: pointer;
+    justify-items: center;
+    justify-content: center;
 }
 .brand-card:hover {
     transform: scale(1.05);
@@ -59,6 +61,7 @@ const brands = ref([
     height: auto;
     object-fit: contain;
     margin-bottom: 10px;
+    justify-self: center;
 }
 .brand-card p {
     font-size: 0.9rem;
