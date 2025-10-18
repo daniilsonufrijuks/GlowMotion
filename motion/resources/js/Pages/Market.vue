@@ -71,21 +71,22 @@ export default {
                 price_max: this.filters.price_max ?? 100000,
             }).toString();
 
-            // Fetch both PCs and Laptops in parallel
             Promise.all([
-                fetch(`/products/chips?${params}`),
-                fetch(`/products/drinks?${params}`)
+                fetch(`/products/taillights?${params}`),
+                fetch(`/products/headlights?${params}`),
+                fetch(`/products/foglights?${params}`)
             ])
-                .then(([chipsResponse, drinksResponse]) => {
-                    if (!chipsResponse.ok || !drinksResponse.ok) {
+                .then(([taillightsResponse, headlightsResponse, foglightsResponse]) => {
+                    if (!taillightsResponse.ok || !headlightsResponse.ok || !foglightsResponse.ok) {
                         throw new Error('Error fetching products');
                     }
-                    return Promise.all([chipsResponse.json(), drinksResponse.json()]);
+                    return Promise.all([taillightsResponse.json(), headlightsResponse.json(), foglightsResponse.json()]);
                 })
-                .then(([chips, drinks]) => {
-                    console.log('Fetched chips:', chips);
-                    console.log('Fetched drinks:', drinks);
-                    this.products = [...chips, ...drinks]; // Combine the results
+                .then(([foglights, headlights, taillights]) => {
+                    console.log('Fetched chips:', headlights);
+                    console.log('Fetched drinks:', foglights);
+                    console.log('Fetched drinks:', taillights);
+                    this.products = [...taillights, ...headlights, ...foglights]; // Combine the results
                 })
                 .catch((error) => {
                     console.error('Error fetching products:', error);

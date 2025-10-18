@@ -97,6 +97,7 @@
                 </div>
             </div>
         </div>
+        <OrderHistory />
 <!--        <Visitit />-->
         <div class="products">
             <ProductCardDB v-for="product in products" :key="product.id" :product="product" />
@@ -121,11 +122,13 @@ import AboutUsText from "../Components/AboutUsText.vue";
 import Navbar from "@/Components/Navbar.vue";
 import Footer from "@/Components/Footer.vue";
 import ProductCardDB from "@/Components/ProductCardDB.vue";
+import OrderHistory from "../Components/OrderHistory.vue";
 
 
 export default {
     name: 'Home',
     components: {
+        OrderHistory,
         ProductCardDB,
         Navbar,
         Visitit,

@@ -335,4 +335,59 @@ class OrderController extends Controller
     {
         return "{$address['address']}, {$address['city']}, {$address['zipCode']}, {$address['country']}";
     }
+
+    public function show($id)
+    {
+        try {
+            $order = Order::with('orderItems.product')->findOrFail($id);
+
+            if (auth()->check() && $order->user_id !== auth()->id()) {
+                return response()->json(['error' => 'Unauthorized'], 403);
+            }
+
+            // Transform the data for the frontend
+            $formattedOrder = [
+                'id' => $order->id,
+                'total_price' => $order->total_price,
+                'shipping_address' => $order->shipping_address,
+                'ordered_at' => $order->ordered_at,
+                'status' => $order->status,
+            ];
+
+            $formattedItems = $order->orderItems->map(function ($item) {
+                return [
+                    'id' => $item->id,
+                    'name' => $item->product->name ?? 'Product',
+                    'description' => $item->product->description ?? '',
+                    'price' => $item->{'unit-price'},
+                    'quantity' => $item->quantity,
+                    'image' => $item->product->image ?? '/default-image.jpg',
+                ];
+            });
+
+            return response()->json([
+                'order' => $formattedOrder,
+                'items' => $formattedItems
+            ]);
+
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Order not found'], 404);
+        }
+    }
+
+    public function userOrders()
+    {
+        $user = auth()->user();
+
+        if (!$user) {
+            return response()->json(['message' => 'Unauthorized'], 401);
+        }
+
+        // Fetch orders for the logged-in user
+        $orders = Order::where('user_id', $user->id)
+            ->orderBy('ordered_at', 'desc')
+            ->get(['id', 'total_price', 'status', 'ordered_at', 'shipping_address']);
+
+        return response()->json($orders);
+    }
 }

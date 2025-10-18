@@ -76,6 +76,18 @@ Route::get('/headlights', function () {
     return Inertia::render('Headlights');
 })->name('headlights');
 
+Route::get('/daytime', function () {
+    return Inertia::render('Daytime');
+})->name('daytime');
+
+Route::get('/foglights', function () {
+    return Inertia::render('Foglights');
+})->name('foglights');
+
+Route::get('/taillights', function () {
+    return Inertia::render('Taillights');
+})->name('taillights');
+
 Route::get('/cart', function () {
     return Inertia::render('Cart');
 })->name('cart');
@@ -170,6 +182,9 @@ Route::post('/logout', function () {
 
 // for getting products for pages for categories
 Route::get('/products/headlights', [ProductsController::class, 'getHeadlightsProducts']);
+Route::get('/products/taillights', [ProductsController::class, 'getTaillightslightsProducts']);
+Route::get('/products/foglights', [ProductsController::class, 'getFoglightslightsProducts']);
+Route::get('/products/daytime', [ProductsController::class, 'getDaytimelightsProducts']);
 
 Route::get('/products/{id}', [ProductsController::class, 'show']);
 
@@ -198,6 +213,18 @@ Route::get('/products/{id}', [ProductsController::class, 'show']);
 // Proceed to checkout (with session-based authentication)
 Route::post('/order', [OrderController::class, 'store'])->middleware('auth');
 Route::get('/order-success', [OrderController::class, 'handleSuccess'])->name('order.success');
+
+Route::get('/orders/user', [OrderController::class, 'userOrders'])
+    ->middleware('auth');
+
+Route::get('/orders/{id}', [OrderController::class, 'show'])
+    ->middleware('auth');
+
+Route::middleware('auth')->get('/orders/{id}/details', function ($id) {
+    return Inertia::render('OrderDetails', [
+        'orderId' => $id,
+    ]);
+})->name('orders.details');
 //Route::get('/order-confirmation', function() {
 //    return view('order-confirmation');
 //})->name('order.confirmation');
@@ -231,11 +258,22 @@ Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('adm
 Route::get('/admin/orders', [AdminController::class, 'showOrders'])->name('admin.orders');
 Route::get('/admin/ordersj', [AdminController::class, 'showjoinedOrders'])->name('admin.j.orders');
 Route::get('/admin/products', [AdminController::class, 'showProducts'])->name('admin.products');
+Route::get('/admin/users', [AdminController::class, 'showUsers'])->name('admin.users');
+Route::get('/admin/brands', [AdminController::class, 'showBrands'])->name('admin.brands');
+Route::get('/admin/categories', [AdminController::class, 'showCategories'])->name('admin.categories');
+
 Route::post('/admin/products', [AdminController::class, 'storeProduct'])->name('admin.products.add');
+Route::post('/admin/brands', [AdminController::class, 'storeBrand'])->name('admin.brands.add');
+Route::post('/admin/categories', [AdminController::class, 'storeCategory'])->name('admin.categories.add');
+
 Route::delete('/admin/products/{id}', [AdminController::class, 'destroyProduct']);
 Route::delete('/admin/orders/{id}', [AdminController::class, 'destroyOrder']);
-Route::put('/admin/products/{id}', [AdminController::class, 'update']);
+Route::delete('/admin/orderitems/{id}', [AdminController::class, 'destroyOrderItem']);
+Route::delete('/admin/users/{id}', [AdminController::class, 'destroyUser']);
+Route::delete('/admin/brands/{id}', [AdminController::class, 'destroyBrand']);
+Route::delete('/admin/categories/{id}', [AdminController::class, 'destroyCategory']);
 
+Route::put('/admin/products/{id}', [AdminController::class, 'updateProduct']);
 
 
 
