@@ -67,7 +67,7 @@ const categories = ref([
         id: 1,
         name: "HEADLIGHTS",
         description: "Front headlights for multiple car brands with LED, Xenon, and Halogen options",
-        image: "/images/categories/headlights.jpg",
+        image: "/images/front/headlights-category.webp",
         route: "/headlights",
         itemCount: 500,
         brands: 20
@@ -76,7 +76,7 @@ const categories = ref([
         id: 2,
         name: "TAILLIGHTS",
         description: "Modern and classic taillights for various makes and models",
-        image: "/images/categories/taillights.jpg",
+        image: "/images/front/taillights-category.webp",
         route: "/taillights",
         itemCount: 340,
         brands: 16
@@ -85,7 +85,7 @@ const categories = ref([
         id: 3,
         name: "FOG LIGHTS",
         description: "Fog lights designed for better visibility and safety in tough conditions",
-        image: "/images/categories/foglights.jpg",
+        image: "/images/front/FogLights.gif",
         route: "/foglights",
         itemCount: 140,
         brands: 9
@@ -94,7 +94,7 @@ const categories = ref([
         id: 4,
         name: "DAYTIME RUNNING LIGHTS",
         description: "LED interior kits, ambient lighting and dome lights for premium feel",
-        image: "/images/categories/interior-lights.jpg",
+        image: "/images/front/DaytimeRunningLights.gif",
         route: "/daytime",
         itemCount: 180,
         brands: 14
