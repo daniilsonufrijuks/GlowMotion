@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="hero-buttons">
-                    <a href="#" class="btn-primary">Find GlowMotion lights for Your Car</a>
+                    <a @click="goToProductsPage()" class="btn-primary">Find GlowMotion lights for Your Car</a>
                     <a href="#" class="btn-secondary">Read Customer Reviews</a>
                 </div>
             </div>
@@ -41,6 +41,20 @@
         </div>
     </section>
 </template>
+
+<script>
+import { useRouter } from 'vue-router';
+import {Inertia} from "@inertiajs/inertia";
+
+export default {
+    methods: {
+        goToProductsPage() {
+            window.location.href = `/productsall`;
+            //this.$router.push({ path: '/product', query: { id: productId } });
+        },
+    },
+};
+</script>
 
 <style scoped>
 

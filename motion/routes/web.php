@@ -100,6 +100,10 @@ Route::get('/tutor', function () {
     return Inertia::render('Tutorials');
 })->name('tutor');
 
+Route::get('/productsall', function () {
+    return Inertia::render('Products');
+})->name('productsall');
+
 //Route::get('/quiz', function () {
 //    return Inertia::render('Quiz');
 //})->name('quiz');
