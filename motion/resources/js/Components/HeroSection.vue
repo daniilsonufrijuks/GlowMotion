@@ -37,7 +37,6 @@
             <a> Visa </a>
             <a> Apple Pay </a>
             <a> Google Pay </a>
-            <a> PayPal </a>
         </div>
     </section>
 </template>

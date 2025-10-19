@@ -2,12 +2,12 @@
 <template>
     <section id="productdetails" v-if="product">
         <div class="single-pro-image">
-            <img :src="product.image || ''" width="50%" id="MainImg" alt="">
-            <div class="small-image-group">
-                <div class="small-img-col" v-for="i in 4" :key="i">
-                    <img :src="product.image || '' " width="100%" class="small-img" alt="">
-                </div>
-            </div>
+            <img :src="product.image || ''" width="90%" id="MainImg" alt="">
+<!--            <div class="small-image-group">-->
+<!--                <div class="small-img-col" v-for="i in 4" :key="i">-->
+<!--                    <img :src="product.image || '' " width="100%" class="small-img" alt="">-->
+<!--                </div>-->
+<!--            </div>-->
         </div>
         <div class="single-pro-details">
             <h6>{{ product.category }}</h6>

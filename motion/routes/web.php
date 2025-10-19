@@ -188,6 +188,13 @@ Route::get('/products/foglights', [ProductsController::class, 'getFoglightslight
 Route::get('/products/{id}', [ProductsController::class, 'show']);
 
 
+Route::get('/brands', function () {
+    return \App\Models\Brand::select('id', 'name')->get();
+});
+
+Route::get('/categories', function () {
+    return \App\Models\Category::select('id', 'name')->get();
+});
 
 
 

@@ -3,26 +3,27 @@
     <Search />
     <Slider />
     <div class="main-container">
-<!--        <Visitit />-->
+        <!--        <Visitit />-->
         <!-- Filter Inputs -->
         <div class="filters">
+<!--            <select v-model="filters.brand_id" @change="fetchProducts">-->
+<!--                <option value="">All Brands</option>-->
+<!--                <option v-for="brand in brands" :key="brand.id" :value="brand.id">{{ brand.name }}</option>-->
+<!--            </select>-->
+
+<!--            <select v-model="filters.category_id" @change="fetchProducts">-->
+<!--                <option value="">All Light Types</option>-->
+<!--                <option v-for="cat in categories" :key="cat.id" :value="cat.id">{{ cat.name }}</option>-->
+<!--            </select>-->
+
             <input
-                v-model.number="filters.price_min"
                 type="number"
-                placeholder="Min Price"
-                @input="fetchProducts"
-            />
-            <input
                 v-model.number="filters.price_max"
-                type="number"
                 placeholder="Max Price"
                 @input="fetchProducts"
             />
-            <!-- Sorting Dropdown -->
-            <select v-model="sortOrder" @change="sortProducts">
-                <option value="asc">Lowest Price First</option>
-                <option value="desc">Highest Price First</option>
-            </select>
+
+            <button @click="fetchProducts">🔍 Search</button>
         </div>
         <div class="products">
             <ProductCardDB v-for="product in sortedProducts" :key="product.id" :product="product" />
@@ -59,15 +60,20 @@ export default {
     },
     data() {
         return {
-            products: [], // Store products fetched from API
+            products: [],
+            brands: [],
+            categories: [],
             filters: {
                 price_min: 0,
                 price_max: 100000,
+                brand_id: "",
+                category_id: ""
             },
-            sortOrder: "asc", // Default sorting order
+            sortOrder: "asc",
         };
     },
     mounted() {
+        this.loadFilters();
         this.fetchProducts();
 
     },
@@ -84,11 +90,22 @@ export default {
         },
     },
     methods: {
+        loadFilters() {
+            fetch('/brands')
+                .then(res => res.json())
+                .then(data => { this.brands = data });
+
+            fetch('/categories')
+                .then(res => res.json())
+                .then(data => { this.categories = data });
+        },
+
         fetchProducts() {
             const params = new URLSearchParams({
-                price_min: this.filters.price_min ?? 0,
-                price_max: this.filters.price_max ?? 100000,
-                // sort_order: this.sortOrder,
+                price_min: this.filters.price_min,
+                price_max: this.filters.price_max,
+                brand_id: this.filters.brand_id || "",
+                category_id: this.filters.category_id || ""
             }).toString();
 
             fetch(`/products/headlights?${params}`)
@@ -111,6 +128,36 @@ export default {
 </script>
 
 <style scoped>
+.filters {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    padding: 20px;
+    background: #f8f9fc;
+    border-radius: 12px;
+    box-shadow: 0 5px 14px rgba(0,0,0,0.05);
+}
+
+select, input {
+    padding: 10px 16px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+button {
+    background: #621991;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+button:hover {
+    background: #972add;
+}
+
+
 .main-container {
     display: flex;
     flex-direction: column;

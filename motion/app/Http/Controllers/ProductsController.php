@@ -26,6 +26,8 @@ class ProductsController extends Controller
             $query->where('price', '<=', $request->input('price_max'));
         }
 
+        $this->applyFilters($query, $request);
+
         // Fetch the filtered results
         $products = $query->get(['id', 'name', 'price', 'description', 'image']);
 
@@ -48,6 +50,8 @@ class ProductsController extends Controller
         if ($request->filled('price_max')) {
             $query->where('price', '<=', $request->input('price_max'));
         }
+
+        $this->applyFilters($query, $request);
 
         // Fetch the filtered results
         $products = $query->get(['id', 'name', 'price', 'description', 'image']);
@@ -72,6 +76,8 @@ class ProductsController extends Controller
         if ($request->filled('price_max')) {
             $query->where('price', '<=', $request->input('price_max'));
         }
+
+        $this->applyFilters($query, $request);
 
         // Fetch the filtered results
         $products = $query->get(['id', 'name', 'price', 'description', 'image']);
@@ -100,5 +106,25 @@ class ProductsController extends Controller
             ->get();
         return response()->json($products);
     }
+
+    private function applyFilters($query, Request $request)
+    {
+        if ($request->filled('price_min')) {
+            $query->where('price', '>=', $request->input('price_min'));
+        }
+
+        if ($request->filled('price_max')) {
+            $query->where('price', '<=', $request->input('price_max'));
+        }
+
+        if ($request->filled('brand_id')) {
+            $query->where('brand_id', $request->input('brand_id'));
+        }
+
+        if ($request->filled('category_id')) { // Additional safeguard if you want dropdown to filter all at once
+            $query->where('category_id', $request->input('category_id'));
+        }
+    }
+
 
 }
