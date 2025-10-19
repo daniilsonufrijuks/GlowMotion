@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="author" content="darius">
     <meta name="description" content="Cars, car world, car repair, car components, lt">
-    <meta http-equiv="refresh" content="180">
     <meta name="keywords" content="Cars, car world, car repair, car components, lt">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 

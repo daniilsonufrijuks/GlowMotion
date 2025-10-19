@@ -126,5 +126,13 @@ class ProductsController extends Controller
         }
     }
 
+    public function getBestsellers(Request $request): \Illuminate\Http\JsonResponse
+    {
+        // You can later filter by ->where('is_bestseller', 1)
+        $products = Product::all(['id', 'name', 'price', 'description', 'image']);
+
+        return response()->json($products);
+    }
+
 
 }

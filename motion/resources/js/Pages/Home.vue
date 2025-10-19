@@ -8,6 +8,7 @@
     <div class="main-container">
         <BrandList/>
         <HeroSection />
+        <BestSlider />
 <!--        <Visitit />-->
 <!--        <MysteryBox/>-->
         <div class="products">
@@ -35,10 +36,12 @@ import ProductCardDB from "@/Components/ProductCardDB.vue";
 import SectionCom from "@/Components/SectionCom.vue";
 import BrandList from "../Components/BrandList.vue";
 import HeroSection from "../Components/HeroSection.vue";
+import BestSlider from "../Components/BestSlider.vue";
 
 export default {
     name: 'Home',
     components: {
+        BestSlider,
         HeroSection,
         BrandList,
         SectionCom,
