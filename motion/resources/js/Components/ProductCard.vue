@@ -25,12 +25,33 @@
 
             <h4>Product Details</h4>
             <p class="description">{{ product.description }}</p>
+            <div
+                v-if="product.variations && product.variations.length"
+                class="variation-cards"
+            >
+                <p class="variation-label">Available Options:</p>
+                <div class="variation-list">
+                    <div
+                        v-for="variation in product.variations"
+                        :key="variation.id"
+                        :class="[
+                        'variation-card',
+                        { selected: selectedVariation && selectedVariation.id === variation.id }
+                      ]"
+                        @click="selectVariation(variation)"
+                    >
+                        <h5>{{ variation.name }}</h5>
+                        <span>${{ variation.price || product.price }}</span>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Image modal -->
         <div v-if="openModal" class="modal" @click="openModal = false">
             <img :src="product.image" alt="Large product view" class="modal-img" />
         </div>
+
     </section>
 
     <p v-else>Loading product details...</p>
@@ -45,7 +66,7 @@
 
 <script>
 import { useStore } from "vuex";
-import { ref } from "vue";
+import {computed, ref} from "vue";
 
 export default {
     props: ["product"],
@@ -54,14 +75,30 @@ export default {
         const quantity = ref(1);
         const showNotification = ref(false);
         const openModal = ref(false);
+        const selectedVariation = ref(null);
+
+        // if (props.product.variations?.length) {
+        //     selectedVariation.value = props.product.variations[0];
+        // }
+
+        const displayPrice = computed(() =>
+            parseFloat(selectedVariation.value?.price) + parseFloat(props.product.price)
+        );
+
+        const selectVariation = (variation) => {
+            selectedVariation.value = variation;
+        };
 
         const addToCart = (product) => {
-            store.commit("ADD_TO_CART", { ...product, quantity: quantity.value });
+            store.commit("ADD_TO_CART", { ...product,  variation_id: selectedVariation.value?.id || null,
+                variation_name: selectedVariation.value?.name || null, quantity: quantity.value, price: displayPrice.value, });
             showNotification.value = true;
             setTimeout(() => (showNotification.value = false), 2500);
         };
 
-        return { quantity, addToCart, showNotification, openModal };
+        return {
+            quantity, addToCart, showNotification, openModal, selectVariation,  selectedVariation,
+        };
     },
 };
 </script>
@@ -242,5 +279,58 @@ export default {
     .product-price {
         font-size: 20px;
     }
+}
+
+
+
+.variation-cards {
+    margin-bottom: 25px;
+}
+
+.variation-label {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.variation-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.variation-card {
+    flex: 0 0 auto;
+    padding: 10px 16px;
+    background-color: #f7f7f7;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    text-align: center;
+    min-width: 100px;
+}
+
+.variation-card:hover {
+    background-color: #f0e6f0;
+    border-color: #d1b3d1;
+}
+
+.variation-card.selected {
+    border-color: #7a3a7b;
+    background-color: #f4e4f4;
+    box-shadow: 0 0 8px rgba(122, 58, 123, 0.3);
+}
+
+.variation-card h5 {
+    font-size: 15px;
+    margin-bottom: 4px;
+    color: #333;
+}
+
+.variation-card span {
+    font-size: 14px;
+    color: #7a3a7b;
+    font-weight: 600;
 }
 </style>

@@ -88,7 +88,7 @@ class ProductsController extends Controller
 
     public function show($id): \Illuminate\Http\JsonResponse
     {
-        $products = Product::find($id, ['id', 'name', 'price', 'description', 'image', 'category_id']);
+        $products = Product::with('variations')->find($id, ['id', 'name', 'price', 'description', 'image', 'category_id']);
 
         if (!$products) {
             return response()->json(['error' => 'Product not found'], 404);
@@ -133,6 +133,5 @@ class ProductsController extends Controller
 
         return response()->json($products);
     }
-
 
 }

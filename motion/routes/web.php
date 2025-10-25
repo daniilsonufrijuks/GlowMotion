@@ -283,7 +283,9 @@ Route::delete('/admin/categories/{id}', [AdminController::class, 'destroyCategor
 
 Route::put('/admin/products/{id}', [AdminController::class, 'updateProduct']);
 
-
+Route::post('/admin/variations', [AdminController::class, 'storeVariation'])->name('admin.variations.store');
+Route::post('/admin/variations/{id}', [AdminController::class, 'updateVariation'])->name('admin.variations.update');
+Route::delete('/admin/variations/{id}', [AdminController::class, 'destroyVariation'])->name('admin.variations.destroy');
 
 
 

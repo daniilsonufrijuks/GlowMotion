@@ -42,6 +42,12 @@
                 Categories
             </button>
             <button
+                @click="activeTab = 'variations'"
+                :class="['tab-button', { active: activeTab === 'variations' }]"
+            >
+                Variations
+            </button>
+            <button
                 @click="activeTab = 'addProduct'"
                 :class="['tab-button', { active: activeTab === 'addProduct' }]"
             >
@@ -272,6 +278,88 @@
             </div>
         </section>
 
+        <!-- Variations Section -->
+        <section v-if="activeTab === 'variations'" class="section">
+            <h2 class="section-title">Variations</h2>
+
+            <!-- Add Variation Form -->
+            <div class="add-variation-form">
+                <h3>Add New Variation</h3>
+                <form @submit.prevent="addVariation" class="form">
+                    <div class="form-group">
+                        <label>Product *</label>
+                        <select v-model="newVariation.product_id" required>
+                            <option value="">Select Product</option>
+                            <option v-for="product in products" :key="product.id" :value="product.id">
+                                {{ product.name }} (ID: {{ product.id }})
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Variation Name *</label>
+                        <input v-model="newVariation.name" type="text" placeholder="Variation Name" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea v-model="newVariation.description" placeholder="Description"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Price *</label>
+                        <input v-model="newVariation.price" type="number" step="0.01" placeholder="Price" required />
+                    </div>
+
+                    <button type="submit" class="submit-btn" :disabled="isAddingVariation">
+                        {{ isAddingVariation ? 'Adding Variation...' : 'Add Variation' }}
+                    </button>
+                </form>
+            </div>
+
+            <div class="scrollable-container">
+                <div class="card-grid">
+                    <div class="card" v-for="variation in variations" :key="variation.id">
+                        <template v-if="editVariation && editVariation.id === variation.id">
+                            <div class="edit-form">
+                                <select v-model="editVariation.product_id" class="form-input" required>
+                                    <option value="">Select Product</option>
+                                    <option v-for="product in products" :key="product.id" :value="product.id">
+                                        {{ product.name }} (ID: {{ product.id }})
+                                    </option>
+                                </select>
+
+                                <input v-model="editVariation.name" placeholder="Variation Name" class="form-input" required />
+                                <textarea v-model="editVariation.description" placeholder="Description" class="form-input"></textarea>
+                                <input v-model="editVariation.price" type="number" step="0.01" placeholder="Price" class="form-input" required />
+
+                                <div class="edit-actions">
+                                    <button @click="updateVariation" class="save-btn">Save Changes</button>
+                                    <button @click="cancelEditVariation" class="cancel-btn">Cancel</button>
+                                </div>
+                            </div>
+                        </template>
+                        <template v-else>
+                            <p><strong>ID:</strong> {{ variation.id }}</p>
+                            <p><strong>Product:</strong>
+                                <span v-if="variation.product">{{ variation.product.name }} (ID: {{ variation.product_id }})</span>
+                                <span v-else>N/A</span>
+                            </p>
+                            <p><strong>Name:</strong> {{ variation.name }}</p>
+                            <p><strong>Description:</strong> {{ variation.description || 'N/A' }}</p>
+                            <p><strong>Price:</strong> ${{ variation.price }}</p>
+                            <p><strong>Created:</strong> {{ formatDate(variation.created_at) }}</p>
+                            <p><strong>Updated:</strong> {{ formatDate(variation.updated_at) }}</p>
+                            <div class="actions">
+                                <button @click="startEditVariation(variation)" class="edit-btn">Edit</button>
+                                <button @click="deleteRecord('variation', variation.id)" class="delete-btn">Delete</button>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Add Product -->
         <section v-if="activeTab === 'addProduct'" class="section">
             <h2 class="section-title">Add Product</h2>
@@ -381,7 +469,11 @@ export default {
         categories: {
             type: Array,
             default: () => []
-        }
+        },
+        variations: {
+            type: Array,
+            default: () => []
+        },
     },
     data() {
         return {
@@ -402,6 +494,12 @@ export default {
             newCategory: {
                 name: ''
             },
+            newVariation: {
+                product_id: '',
+                name: '',
+                description: '',
+                price: ''
+            },
             imageFile: null,
             imagePreview: null,
             editProduct: null,
@@ -410,6 +508,8 @@ export default {
             isAdding: false,
             isAddingBrand: false,
             isAddingCategory: false,
+            editVariation: null,
+            isAddingVariation: false,
             notification: {
                 show: false,
                 message: '',
@@ -610,6 +710,86 @@ export default {
             }
         },
 
+        cancelEditVariation() {
+            this.editVariation = null;
+        },
+
+        async updateVariation() {
+            if (!this.editVariation) return;
+
+            try {
+                // Use POST with _method for PUT to avoid route issues
+                const formData = new FormData();
+                Object.keys(this.editVariation).forEach(key => {
+                    if (this.editVariation[key] !== null && this.editVariation[key] !== undefined) {
+                        formData.append(key, this.editVariation[key]);
+                    }
+                });
+                formData.append('_method', 'POST');
+
+                await this.$inertia.post(`/admin/variations/${this.editVariation.id}`, formData, {
+                    onSuccess: () => {
+                        this.showNotification('Variation updated successfully!', 'success');
+                        this.editVariation = null;
+                    },
+                    onError: (errors) => {
+                        console.error('Update variation errors:', errors);
+                        this.showNotification('Error updating variation: ' + JSON.stringify(errors), 'error');
+                    }
+                });
+
+            } catch (error) {
+                console.error('Error updating variation:', error);
+                this.showNotification('Error updating variation: ' + error.message, 'error');
+            }
+        },
+        async addVariation() {
+            if (!this.newVariation.product_id || !this.newVariation.name || !this.newVariation.price) {
+                this.showNotification('Please fill all required fields', 'error');
+                return;
+            }
+
+            this.isAddingVariation = true;
+
+            try {
+                await this.$inertia.post('/admin/variations', this.newVariation, {
+                    onSuccess: () => {
+                        this.showNotification('Variation added successfully!', 'success');
+                        this.resetVariationForm();
+                        this.isAddingVariation = false;
+                    },
+                    onError: (errors) => {
+                        console.error('Add variation errors:', errors);
+                        this.showNotification('Failed to add variation: ' + JSON.stringify(errors), 'error');
+                        this.isAddingVariation = false;
+                    }
+                });
+            } catch (error) {
+                console.error('Error adding variation:', error);
+                this.showNotification('Error adding variation: ' + error.message, 'error');
+                this.isAddingVariation = false;
+            }
+        },
+
+        resetVariationForm() {
+            this.newVariation = {
+                product_id: '',
+                name: '',
+                description: '',
+                price: ''
+            };
+        },
+
+        startEditVariation(variation) {
+            this.editVariation = {
+                id: variation.id,
+                product_id: variation.product_id,
+                name: variation.name,
+                description: variation.description,
+                price: variation.price
+            };
+        },
+
         handleFileUpload(event) {
             const file = event.target.files[0];
             if (file) {
@@ -657,7 +837,8 @@ export default {
                     'product': 'products',
                     'user': 'users',
                     'brand': 'brands',
-                    'category': 'categories'
+                    'category': 'categories',
+                    'variation': 'variations',
                 };
 
                 // get the correct plural form, fallback - adding 's' as default
@@ -1128,6 +1309,56 @@ input[type="file"] {
     .scrollable-container {
         max-height: 60vh;
     }
+}
+
+
+
+
+.add-variation-form {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.add-variation-form h3 {
+    margin-bottom: 15px;
+    color: #333;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+.add-variation-form .form {
+    max-width: 500px;
+    margin: 0;
+}
+
+/* Ensure the form inputs are consistent with existing styles */
+.add-variation-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.add-variation-form .form-group label {
+    font-weight: bold;
+    color: #333;
+}
+
+.add-variation-form .form-group input,
+.add-variation-form .form-group select,
+.add-variation-form .form-group textarea {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.add-variation-form .form-group textarea {
+    min-height: 80px;
+    resize: vertical;
 }
 
 </style>

@@ -241,7 +241,7 @@ export default {
             // Validate cart has items
             if (cartItems.value.length === 0) {
                 alert('Your cart is empty. Please add items before proceeding.');
-                router.push('/cart');
+                await router.push('/cart');
                 return;
             }
 
@@ -296,9 +296,7 @@ export default {
                 //     sessionId: response.data.id
                 // });
                 window.location.href = response.data.url;
-                if (error) {
-                    throw new Error(error.message);
-                }
+
             } catch (error) {
                 console.error('Error processing order:', error);
                 if (error.response && error.response.status === 401) {

@@ -8,6 +8,7 @@ use App\Models\OrderItem;
 use App\Models\User;
 use App\Models\Brand;
 use App\Models\Category;
+use App\Models\Variation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Inertia\Inertia;
@@ -48,6 +49,11 @@ class AdminController extends Controller
             'id', 'name', 'created_at', 'updated_at'
         ])->latest()->get();
 
+        $variations = Variation::with(['product'])
+            ->select([
+                'id', 'product_id', 'name', 'description', 'price', 'created_at', 'updated_at'
+            ])->latest()->get();
+
         return Inertia::render('Admin', [
             'orders' => $orders,
             'products' => $products,
@@ -55,6 +61,7 @@ class AdminController extends Controller
             'users' => $users,
             'brands' => $brands,
             'categories' => $categories,
+            'variations' => $variations,
         ]);
     }
 
@@ -346,6 +353,95 @@ class AdminController extends Controller
         } catch (\Exception $e) {
             Log::error('Error updating product: ' . $e->getMessage());
             return redirect()->back()->with('error', 'Failed to update product: ' . $e->getMessage());
+        }
+    }
+
+    public function showVariations(Request $request): \Illuminate\Http\JsonResponse
+    {
+        $variations = Variation::with(['product'])
+            ->select([
+                'id', 'product_id', 'name', 'description', 'price', 'created_at', 'updated_at'
+            ])
+            ->latest()
+            ->get();
+
+        return response()->json($variations);
+    }
+
+    public function storeVariation(Request $request): \Illuminate\Http\RedirectResponse
+    {
+        $request->validate([
+            'product_id' => 'required|exists:products,id',
+            'name' => 'required|string|max:100',
+            'description' => 'nullable|string',
+            'price' => 'required|numeric|min:0',
+        ]);
+
+        try {
+            Variation::create([
+                'product_id' => $request->product_id,
+                'name' => $request->name,
+                'description' => $request->description,
+                'price' => $request->price,
+            ]);
+
+            return redirect()->route('admin.dashboard')->with('success', 'Variation added successfully!');
+
+        } catch (\Exception $e) {
+            \Log::error('Error adding variation: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'Failed to add variation: ' . $e->getMessage());
+        }
+    }
+
+    public function updateVariation(Request $request, $id): \Illuminate\Http\RedirectResponse
+    {
+        Log::info('Update variation request received', ['id' => $id, 'data' => $request->all()]);
+
+        $request->validate([
+            'product_id' => 'required|exists:products,id',
+            'name' => 'required|string|max:100',
+            'description' => 'nullable|string',
+            'price' => 'required|numeric|min:0',
+        ]);
+
+        try {
+            $variation = Variation::findOrFail($id);
+            Log::info('Variation found', ['variation' => $variation->toArray()]);
+
+            $updateData = [
+                'product_id' => $request->product_id,
+                'name' => $request->name,
+                'description' => $request->description,
+                'price' => $request->price,
+            ];
+
+            Log::info('Update data prepared', $updateData);
+
+            $updated = $variation->update($updateData);
+            Log::info('Variation update result', ['updated' => $updated, 'variation_after' => $variation->fresh()->toArray()]);
+
+            if ($updated) {
+                return redirect()->route('admin.dashboard')->with('success', 'Variation updated successfully!');
+            } else {
+                return redirect()->back()->with('error', 'Failed to update variation in database.');
+            }
+        } catch (\Exception $e) {
+            Log::error('Error updating variation: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'Failed to update variation: ' . $e->getMessage());
+        }
+    }
+
+    public function destroyVariation($id)
+    {
+        try {
+            $variation = Variation::findOrFail($id);
+            $variation->delete();
+
+            return response()->json(['success' => 'Variation deleted successfully!']);
+
+        } catch (\Exception $e) {
+            \Log::error('Error deleting variation: ' . $e->getMessage());
+            return response()->json(['error' => 'Failed to delete variation.'], 500);
         }
     }
 }
