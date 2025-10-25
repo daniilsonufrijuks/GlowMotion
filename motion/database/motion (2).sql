@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:4306
--- Время создания: Окт 04 2025 г., 10:12
+-- Время создания: Окт 25 2025 г., 11:05
 -- Версия сервера: 10.4.32-MariaDB
 -- Версия PHP: 8.2.12
 
@@ -56,6 +56,68 @@ CREATE TABLE `brands` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Дамп данных таблицы `brands`
+--
+
+INSERT INTO `brands` (`id`, `name`, `admin_id`, `created_at`, `updated_at`) VALUES
+(1, 'BMW', 1, '2025-10-04 11:00:29', '2025-10-04 11:00:29'),
+(2, 'Audi', 1, '2025-10-04 11:00:29', '2025-10-04 11:00:29'),
+(3, 'Porsche', 1, '2025-10-04 11:00:29', '2025-10-04 11:00:29'),
+(4, 'Mercedes-Benz', 1, '2025-10-04 11:00:29', '2025-10-04 11:00:29'),
+(5, 'Volkswagen', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(6, 'Opel', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(7, 'Ford', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(8, 'Chevrolet', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(9, 'Cadillac', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(10, 'Jeep', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(11, 'Tesla', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(12, 'Dodge', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(13, 'Chrysler', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(14, 'Lincoln', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(15, 'Buick', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(16, 'Toyota', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(17, 'Honda', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(18, 'Nissan', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(19, 'Mazda', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(20, 'Subaru', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(21, 'Mitsubishi', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(22, 'Lexus', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(23, 'Infiniti', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(24, 'Acura', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(25, 'Suzuki', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(26, 'Hyundai', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(27, 'Kia', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(28, 'Genesis', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(29, 'Renault', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(30, 'Peugeot', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(31, 'Citroën', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(32, 'Bugatti', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(33, 'Ferrari', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(34, 'Lamborghini', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(35, 'Maserati', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(36, 'Alfa Romeo', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(37, 'Fiat', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(38, 'Lancia', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(39, 'Land Rover', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(40, 'Jaguar', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(41, 'Mini', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(42, 'Bentley', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(43, 'Rolls-Royce', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(44, 'Aston Martin', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(45, 'McLaren', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(46, 'Lotus', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(47, 'Volvo', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(48, 'Saab', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(49, 'Skoda', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(50, 'Seat', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(51, 'BYD', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(52, 'Geely', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(53, 'Great Wall', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(54, 'Maybach', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(55, 'Pagani', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25'),
+(56, 'Koenigsegg', 1, '2025-10-18 04:56:25', '2025-10-18 04:56:25');
+
 -- --------------------------------------------------------
 
 --
@@ -94,6 +156,16 @@ CREATE TABLE `categories` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Дамп данных таблицы `categories`
+--
+
+INSERT INTO `categories` (`id`, `name`, `admin_id`, `created_at`, `updated_at`) VALUES
+(1, 'Headlights', 1, '2025-10-04 11:00:29', '2025-10-04 11:00:29'),
+(2, 'Tail Lights', 1, '2025-10-04 11:00:29', '2025-10-04 11:00:29'),
+(3, 'Fog Lights', 1, '2025-10-04 11:00:29', '2025-10-04 11:00:29'),
+(4, 'Daytime Running Lights', 1, '2025-10-04 11:00:29', '2025-10-04 11:00:29');
+
 -- --------------------------------------------------------
 
 --
@@ -107,20 +179,6 @@ CREATE TABLE `comments` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Дамп данных таблицы `comments`
---
-
-INSERT INTO `comments` (`id`, `body`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 'Nice shop', NULL, '2025-06-27 09:40:43', '2025-06-27 09:40:43'),
-(2, 'Thank you', NULL, '2025-06-27 09:46:35', '2025-06-27 09:46:35'),
-(3, 'Very very nice shop', NULL, '2025-07-10 11:36:42', '2025-07-10 11:36:42'),
-(4, 'Thank you!', NULL, '2025-08-26 05:15:35', '2025-08-26 05:15:35'),
-(5, 'Thanks!', NULL, '2025-09-21 04:01:22', '2025-09-21 04:01:22'),
-(6, 'hello', NULL, '2025-09-23 05:05:58', '2025-09-23 05:05:58'),
-(7, 'hello', NULL, '2025-09-23 05:06:04', '2025-09-23 05:06:04'),
-(8, 'hello', NULL, '2025-09-23 05:06:22', '2025-09-23 05:06:22');
 
 -- --------------------------------------------------------
 
@@ -251,6 +309,14 @@ CREATE TABLE `orders` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Дамп данных таблицы `orders`
+--
+
+INSERT INTO `orders` (`id`, `user_id`, `status`, `total_price`, `shipping_address`, `ordered_at`, `created_at`, `updated_at`) VALUES
+(36, 10, 'paid', 1200.00, 'Skuju iela 18, Riga, LV, Latvia', '2025-10-05 03:57:22', '2025-10-05 03:57:22', '2025-10-05 03:57:22'),
+(37, 10, 'paid', 1520.00, 'Skuju iela 18, Riga, LV, Latvia', '2025-10-25 05:38:00', '2025-10-25 05:38:00', '2025-10-25 05:38:00');
+
 -- --------------------------------------------------------
 
 --
@@ -267,6 +333,14 @@ CREATE TABLE `order_items` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Дамп данных таблицы `order_items`
+--
+
+INSERT INTO `order_items` (`id`, `quantity`, `unit-price`, `subtotal`, `order_id`, `product_id`, `created_at`, `updated_at`) VALUES
+(39, 1, 1200.00, 1200.00, 36, 120, '2025-10-05 03:57:22', '2025-10-05 03:57:22'),
+(40, 1, 1520.00, 1520.00, 37, 121, '2025-10-25 05:38:00', '2025-10-25 05:38:00');
 
 -- --------------------------------------------------------
 
@@ -302,6 +376,17 @@ CREATE TABLE `products` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Дамп данных таблицы `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `price`, `amount_value`, `country_origin`, `image`, `description`, `storage_conditions`, `admin_id`, `brand_id`, `category_id`, `created_at`, `updated_at`) VALUES
+(120, 'BMW 3 Series G20 LED Headlights', 1200.00, 20, 'Germany', 'images/front/bmw-g20-headlights.webp', NULL, 'Store in dry place', 1, 1, 1, '2025-10-04 11:00:29', '2025-10-18 05:44:24'),
+(121, 'Audi A6 C8 OLED Tail Lights', 1500.00, 2, 'Germany', 'images/front/AudiA6C8OLEDTailLights.jpg', 'Audi A6 C8 original OLED dynamic tail lights set with sequential indicators.', 'Keep sealed, avoid moisture', 1, 2, 2, '2025-10-04 11:00:29', '2025-10-04 11:00:29'),
+(122, 'Porsche 911 992 LED Matrix Headlights', 2800.00, 2, 'Germany', 'images/front/Porsche911LEDMatrixHeadlights.webp', 'Genuine Porsche 911 992 LED Matrix Headlights with automatic high-beam assist.', 'Keep in original packaging', 1, 3, 1, '2025-10-04 11:00:29', '2025-10-04 11:00:29'),
+(123, 'Mercedes-Benz E-Class W213 LED Fog Lights', 450.00, 2, 'Germany', 'images/front/Porsche911LEDMatrixHeadlights.webp', 'OEM LED Fog Lights for Mercedes E-Class W213 facelift model.', 'Avoid direct sunlight', 1, 4, 3, '2025-10-04 11:00:29', '2025-10-04 11:00:29'),
+(124, 'Audi Q7 LED Daytime Running Lights', 350.00, 2, 'Germany', 'images/front/AudiA6C8OLEDTailLights.jpg', 'Original DRL lights for Audi Q7 with white LED signature.', 'Keep sealed until installation', 1, 2, 4, '2025-10-04 11:00:29', '2025-10-04 11:00:29');
+
 -- --------------------------------------------------------
 
 --
@@ -322,10 +407,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('4zkoR34KJ6Tf1f1oi6HA3BRkGmB6VJX3b2h5IR2K', 10, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiWWV1WnpCRktQb2RnR2FhR1RMN0hFRGt1ekwwSm9GRU5NSG9aYWFCWSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NjU6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wcm9kdWN0cy9jaGlwcz9wcmljZV9tYXg9MTAwMDAwJnByaWNlX21pbj0wIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTA7fQ==', 1759565387),
-('82JuG4w0rVYcd6U6wRYl6XcNlLzIs1fcTxA2aowJ', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiTE02OXA4VmM0QmxXMXY0cDdONHhEd21QTEhHSTdtbHdRSXRjUEdMbiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9vcmRlci1jb25maXJtYXRpb24iO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1759558416),
-('bclTsL39JM3cPzRfd0IAGYBWJ80LJX5eevUmTpvu', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiN0R0bHp4Z0hZa1VtMHBJSXBRUHYyRXF6SG83SEJDSUFqemVaQlF5TiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1759558417),
-('JhHEPf7onflRjRQxaoIxGpGibdnrtkYt0D1tZMmT', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiMUtmbUxYUEtRZzlSemtNZ2VhaDVBZmh4YnZpTWk0a25kZjNhRXhqVSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9vcmRlci1jb25maXJtYXRpb24iO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1759558416);
+('TnwEFYnVjPL65gl6H7m78VTZp8dX7WZPC4CBmLYe', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiOEtVc1J2bklCQmtYRndtUFJUN1RpSlVUSmw5ZHRlaklvaXZrNWo3cCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NzA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wcm9kdWN0cy9oZWFkbGlnaHRzP3ByaWNlX21heD0xMDAwMDAmcHJpY2VfbWluPTAiO31zOjUyOiJsb2dpbl9hZG1pbl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==', 1761383061);
 
 -- --------------------------------------------------------
 
@@ -355,11 +437,34 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 (3, 'rvt', 'rvt@gmail.com', NULL, '$2y$12$jPxR/QjacCOyr6dv.sJEVezgN.170e2O9ElLtewTj77K9n2GkFikS', NULL, b'0', '2025-05-25 08:15:11', '2025-05-25 08:15:11'),
 (4, 'donufrijuks', 'donufrijuks@gmail.com', NULL, '$2y$12$FiXc4Mb/i/NtMXokjqI/.eBGodARvWNcBbhEsUwy/80dAnFJ.BgC.', NULL, b'0', '2025-06-05 03:44:41', '2025-06-05 03:44:41'),
 (5, 'freemen1094', 'freemen1094@gmail.com', NULL, '$2y$12$O.k/JwU8ylbUlmulbfzYTOJ6XRE/HNoHZq3sBnWN/EaKvuT.qTUqa', NULL, b'0', '2025-06-05 03:47:49', '2025-06-05 03:47:49'),
-(6, 'dhl', 'dhl@gmail.com', NULL, '$2y$12$Gbds2d0rYJELIAipqmh/nuRcjgnwvp7bA9eWOwuLDG8wG7OzfckRq', NULL, b'0', '2025-06-05 03:49:50', '2025-06-05 03:49:50'),
 (7, 'asin', 'asin@gmail.com', NULL, '$2y$12$p6m2CmKtItJSN6Z2KdiAJ.Uuuw9s9YU9/sW6RZgPE52CLjdj6wiF6', NULL, b'0', '2025-06-05 04:05:10', '2025-06-05 04:05:10'),
 (8, 'kms', 'kms@gmail.com', NULL, '$2y$12$MpXpo4yDiAq3PJMAFlyp/eWYmH1TCEhgch0mR0.vjRQ2GRu0p381.', NULL, b'0', '2025-06-05 04:10:37', '2025-06-05 04:10:37'),
 (9, 'g', 'g@gmail.com', NULL, '$2y$12$scke6DlNfV7ydwerRaOodejJCv.DpT0zGoM9Azrm7dvvQ/IagPHgG', NULL, b'0', '2025-06-24 07:35:37', '2025-06-24 07:35:37'),
 (10, 'man', 'man@gmail.com', NULL, '$2y$12$PGiPSiCm6YeZlX1D3rAzWu/Jvm0JIXUtuiSXJdjfd3/lHwhqVjgga', NULL, b'0', '2025-09-20 06:19:56', '2025-09-20 06:19:56');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `variations`
+--
+
+CREATE TABLE `variations` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `product_id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `description` text DEFAULT NULL,
+  `price` decimal(10,2) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Дамп данных таблицы `variations`
+--
+
+INSERT INTO `variations` (`id`, `product_id`, `name`, `description`, `price`, `created_at`, `updated_at`) VALUES
+(1, 121, '3 pin connector', '3 pin connector fo A6 Oled light', 25.00, '2025-10-25 07:51:42', '2025-10-25 06:03:35'),
+(2, 120, '4 pin connector', '4 pin connector', 30.00, '2025-10-25 06:04:05', '2025-10-25 06:04:05');
 
 --
 -- Индексы сохранённых таблиц
@@ -495,6 +600,13 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
+-- Индексы таблицы `variations`
+--
+ALTER TABLE `variations`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_variations_product` (`product_id`);
+
+--
 -- AUTO_INCREMENT для сохранённых таблиц
 --
 
@@ -508,7 +620,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT для таблицы `brands`
 --
 ALTER TABLE `brands`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT для таблицы `categories`
@@ -556,25 +668,31 @@ ALTER TABLE `mystery_box_items`
 -- AUTO_INCREMENT для таблицы `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT для таблицы `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT для таблицы `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=125;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT для таблицы `variations`
+--
+ALTER TABLE `variations`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
@@ -631,6 +749,12 @@ ALTER TABLE `products`
   ADD CONSTRAINT `products_admin_id_foreign` FOREIGN KEY (`admin_id`) REFERENCES `admins` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `products_brand_id_foreign` FOREIGN KEY (`brand_id`) REFERENCES `brands` (`id`),
   ADD CONSTRAINT `products_category_id_foreign` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`);
+
+--
+-- Ограничения внешнего ключа таблицы `variations`
+--
+ALTER TABLE `variations`
+  ADD CONSTRAINT `fk_variations_product` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
