@@ -1,5 +1,10 @@
+
 <template>
-    <section class="bestseller-slider">
+    <section
+        class="bestseller-slider"
+        @mouseenter="pauseAnimation"
+        @mouseleave="resumeAnimation"
+    >
         <h2 class="slider-title">Bestsellers</h2>
         <div class="slider-wrapper">
             <div class="slider-track" :style="{ transform: `translateX(-${currentPosition}px)` }">
@@ -14,6 +19,8 @@
                     <p class="product-price">{{ product.price }} €</p>
                 </div>
             </div>
+            <div class="fog-left"></div>
+            <div class="fog-right"></div>
         </div>
     </section>
 </template>
@@ -79,6 +86,17 @@ export default {
                         this.currentPosition = 0;
                     }
                 }, 20);
+            }
+        },
+        pauseAnimation() {
+            if (this.animationInterval) {
+                clearInterval(this.animationInterval);
+                this.animationInterval = null;
+            }
+        },
+        resumeAnimation() {
+            if (!this.animationInterval) {
+                this.startAnimation();
             }
         },
         goToProduct(productId) {
@@ -153,5 +171,25 @@ export default {
 .product-price {
     color: #590093;
     font-weight: bold;
+}
+
+.fog-left,
+.fog-right {
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.fog-left {
+    left: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+}
+
+.fog-right {
+    right: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
 }
 </style>
