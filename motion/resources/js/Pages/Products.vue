@@ -20,7 +20,7 @@
                 @input="fetchProducts"
             />
 
-            <button @click="fetchProducts">🔍 Search</button>
+            <button @click="fetchProducts">🔍 Search Details</button>
         </div>
         <div class="products">
             <ProductCardDB v-for="product in products" :key="product.id" :product="product" />
