@@ -81,9 +81,11 @@ export default {
         //     selectedVariation.value = props.product.variations[0];
         // }
 
-        const displayPrice = computed(() =>
-            parseFloat(selectedVariation.value?.price) + parseFloat(props.product.price)
-        );
+        const displayPrice = computed(() => {
+            const variationPrice = parseFloat(selectedVariation.value?.price || 0);
+            const basePrice = parseFloat(props.product.price || 0);
+            return variationPrice + basePrice;
+        });
 
         const selectVariation = (variation) => {
             selectedVariation.value = variation;
