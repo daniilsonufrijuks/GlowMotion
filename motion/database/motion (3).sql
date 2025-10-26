@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:4306
--- Время создания: Окт 25 2025 г., 11:05
+-- Время создания: Окт 26 2025 г., 13:40
 -- Версия сервера: 10.4.32-MariaDB
 -- Версия PHP: 8.2.12
 
@@ -180,6 +180,17 @@ CREATE TABLE `comments` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Дамп данных таблицы `comments`
+--
+
+INSERT INTO `comments` (`id`, `body`, `user_id`, `created_at`, `updated_at`) VALUES
+(9, 'Nice shop!', NULL, '2025-10-26 07:20:23', '2025-10-26 07:20:23'),
+(10, 'Hello!', NULL, '2025-10-26 07:20:34', '2025-10-26 07:20:34'),
+(11, 'Thank you!', NULL, '2025-10-26 07:20:40', '2025-10-26 07:20:40'),
+(12, 'Thank you!', NULL, '2025-10-26 07:20:45', '2025-10-26 07:20:45'),
+(13, 'Thank you!', NULL, '2025-10-26 07:20:48', '2025-10-26 07:20:48');
+
 -- --------------------------------------------------------
 
 --
@@ -265,36 +276,6 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `mystery_boxes`
---
-
-CREATE TABLE `mystery_boxes` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `category` enum('basic','deluxe','premium') NOT NULL,
-  `description` text DEFAULT NULL,
-  `product_id` bigint(20) UNSIGNED NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `mystery_box_items`
---
-
-CREATE TABLE `mystery_box_items` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `quantity` int(10) UNSIGNED NOT NULL,
-  `mystery_box_id` bigint(20) UNSIGNED NOT NULL,
-  `product_id` bigint(20) UNSIGNED NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Структура таблицы `orders`
 --
 
@@ -314,8 +295,8 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `user_id`, `status`, `total_price`, `shipping_address`, `ordered_at`, `created_at`, `updated_at`) VALUES
-(36, 10, 'paid', 1200.00, 'Skuju iela 18, Riga, LV, Latvia', '2025-10-05 03:57:22', '2025-10-05 03:57:22', '2025-10-05 03:57:22'),
-(37, 10, 'paid', 1520.00, 'Skuju iela 18, Riga, LV, Latvia', '2025-10-25 05:38:00', '2025-10-25 05:38:00', '2025-10-25 05:38:00');
+(36, 10, 'paid', 1200.00, 'Street 19, Kaunas, LT, LT', '2025-10-05 03:57:22', '2025-10-05 03:57:22', '2025-10-05 03:57:22'),
+(37, 10, 'paid', 1520.00, 'Street 19, Kaunas, LT, LT', '2025-10-25 05:38:00', '2025-10-25 05:38:00', '2025-10-25 05:38:00');
 
 -- --------------------------------------------------------
 
@@ -407,7 +388,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('TnwEFYnVjPL65gl6H7m78VTZp8dX7WZPC4CBmLYe', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiOEtVc1J2bklCQmtYRndtUFJUN1RpSlVUSmw5ZHRlaklvaXZrNWo3cCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NzA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wcm9kdWN0cy9oZWFkbGlnaHRzP3ByaWNlX21heD0xMDAwMDAmcHJpY2VfbWluPTAiO31zOjUyOiJsb2dpbl9hZG1pbl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==', 1761383061);
+('C0FKVlrpTAbxqof37CVfKrax9GbqGtxr2Bd3TVOA', 10, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiZ0k1dEdPTE5JTXFkbW5JMFlvSTJENmtWb0Voa3JZWE1vc0F6aWFOaiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NzA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wcm9kdWN0cy9oZWFkbGlnaHRzP3ByaWNlX21heD0xMDAwMDAmcHJpY2VfbWluPTAiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUyOiJsb2dpbl9hZG1pbl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTA7czoxOToib3JkZXJfNjhmZTE2NmRkNWNjZiI7YTo3OntzOjc6InVzZXJfaWQiO2k6MTA7czo1OiJpdGVtcyI7YToxOntpOjA7YTo4OntzOjI6ImlkIjtpOjEyMDtzOjQ6Im5hbWUiO3M6MzE6IkJNVyAzIFNlcmllcyBHMjAgTEVEIEhlYWRsaWdodHMiO3M6NToicHJpY2UiO2k6MTIzMDtzOjg6InF1YW50aXR5IjtpOjE7czo1OiJpbWFnZSI7czozNjoiaW1hZ2VzL2Zyb250L2Jtdy1nMjAtaGVhZGxpZ2h0cy53ZWJwIjtzOjExOiJpbmdyZWRpZW50cyI7TjtzOjExOiJjYXRlZ29yeV9pZCI7aToxO3M6MTE6InRvdGFsX3ByaWNlIjtpOjEyMzA7fX1zOjU6InRvdGFsIjtpOjEyMzA7czo4OiJzdWJ0b3RhbCI7aToxMjMwO3M6MTM6InNoaXBwaW5nX2Nvc3QiO2k6MDtzOjE2OiJzaGlwcGluZ19hZGRyZXNzIjthOjU6e3M6NToiZW1haWwiO3M6MjE6ImRvbnVmcmlqdWtzQGdtYWlsLmNvbSI7czo3OiJhZGRyZXNzIjtzOjEzOiJTa3VqdSBpZWxhIDE4IjtzOjQ6ImNpdHkiO3M6NDoiUmlnYSI7czo3OiJ6aXBDb2RlIjtzOjI6IkxWIjtzOjc6ImNvdW50cnkiO3M6NjoiTGF0dmlhIjt9czoxMDoiY3JlYXRlZF9hdCI7TzoyNToiSWxsdW1pbmF0ZVxTdXBwb3J0XENhcmJvbiI6Mzp7czo0OiJkYXRlIjtzOjI2OiIyMDI1LTEwLTI2IDEyOjM5OjA5Ljg3NTg0MiI7czoxMzoidGltZXpvbmVfdHlwZSI7aTozO3M6ODoidGltZXpvbmUiO3M6MzoiVVRDIjt9fX0=', 1761482363);
 
 -- --------------------------------------------------------
 
@@ -435,8 +416,6 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 (1, 'johndoe', 'johndoe@gmail.com', NULL, '$2y$12$CxAVn/AIQsjPZiFKG5GFu.fEx4cO8wOWH2f7ZAlXqJMZRi7AV9irC', NULL, b'0', '2025-04-27 06:03:14', '2025-04-27 06:03:14'),
 (2, 'igor', 'igor@gmail.com', NULL, '$2y$12$e2g1Owb1styaeIdPe/m92OpEaAHyXenGMcA8YNHrxFabGpi/JjKby', NULL, b'0', '2025-05-15 07:39:42', '2025-05-15 07:39:42'),
 (3, 'rvt', 'rvt@gmail.com', NULL, '$2y$12$jPxR/QjacCOyr6dv.sJEVezgN.170e2O9ElLtewTj77K9n2GkFikS', NULL, b'0', '2025-05-25 08:15:11', '2025-05-25 08:15:11'),
-(4, 'donufrijuks', 'donufrijuks@gmail.com', NULL, '$2y$12$FiXc4Mb/i/NtMXokjqI/.eBGodARvWNcBbhEsUwy/80dAnFJ.BgC.', NULL, b'0', '2025-06-05 03:44:41', '2025-06-05 03:44:41'),
-(5, 'freemen1094', 'freemen1094@gmail.com', NULL, '$2y$12$O.k/JwU8ylbUlmulbfzYTOJ6XRE/HNoHZq3sBnWN/EaKvuT.qTUqa', NULL, b'0', '2025-06-05 03:47:49', '2025-06-05 03:47:49'),
 (7, 'asin', 'asin@gmail.com', NULL, '$2y$12$p6m2CmKtItJSN6Z2KdiAJ.Uuuw9s9YU9/sW6RZgPE52CLjdj6wiF6', NULL, b'0', '2025-06-05 04:05:10', '2025-06-05 04:05:10'),
 (8, 'kms', 'kms@gmail.com', NULL, '$2y$12$MpXpo4yDiAq3PJMAFlyp/eWYmH1TCEhgch0mR0.vjRQ2GRu0p381.', NULL, b'0', '2025-06-05 04:10:37', '2025-06-05 04:10:37'),
 (9, 'g', 'g@gmail.com', NULL, '$2y$12$scke6DlNfV7ydwerRaOodejJCv.DpT0zGoM9Azrm7dvvQ/IagPHgG', NULL, b'0', '2025-06-24 07:35:37', '2025-06-24 07:35:37'),
@@ -539,21 +518,6 @@ ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `mystery_boxes`
---
-ALTER TABLE `mystery_boxes`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `product_id` (`product_id`);
-
---
--- Индексы таблицы `mystery_box_items`
---
-ALTER TABLE `mystery_box_items`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `mystery_box_id` (`mystery_box_id`),
-  ADD KEY `product_id` (`product_id`);
-
---
 -- Индексы таблицы `orders`
 --
 ALTER TABLE `orders`
@@ -632,7 +596,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT для таблицы `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT для таблицы `failed_jobs`
@@ -651,18 +615,6 @@ ALTER TABLE `jobs`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
---
--- AUTO_INCREMENT для таблицы `mystery_boxes`
---
-ALTER TABLE `mystery_boxes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT для таблицы `mystery_box_items`
---
-ALTER TABLE `mystery_box_items`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT для таблицы `orders`
@@ -715,19 +667,6 @@ ALTER TABLE `categories`
 --
 ALTER TABLE `comments`
   ADD CONSTRAINT `comments_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE SET NULL;
-
---
--- Ограничения внешнего ключа таблицы `mystery_boxes`
---
-ALTER TABLE `mystery_boxes`
-  ADD CONSTRAINT `mystery_boxes_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Ограничения внешнего ключа таблицы `mystery_box_items`
---
-ALTER TABLE `mystery_box_items`
-  ADD CONSTRAINT `mystery_box_items_mystery_box_id_foreign` FOREIGN KEY (`mystery_box_id`) REFERENCES `mystery_boxes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `mystery_box_items_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ограничения внешнего ключа таблицы `orders`
