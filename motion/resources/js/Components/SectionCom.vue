@@ -1,13 +1,13 @@
 <template>
     <div id="app" class="container">
         <div class="comment-section">
-            <h2>{{ ('commentsTitle') }}</h2>
+            <h2>Comments</h2>
 
             <!-- Comment form -->
             <div v-if="user" class="comment-form">
                 <textarea
                     v-model="newComment"
-                    :placeholder="('commentsWritePlaceholder')"
+                    :placeholder="'Write your comment'"
                     :disabled="isSubmitting">
                 </textarea>
 
@@ -16,7 +16,7 @@
                     class="btn"
                     :disabled="isSubmitting || !newComment.trim()"
                 >
-                    {{ isSubmitting ? ('commentsSubmitting') : ('commentsSubmit') }}
+                    {{'Submit'}}
                 </button>
             </div>
 
