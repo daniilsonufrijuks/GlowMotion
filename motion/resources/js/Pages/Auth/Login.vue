@@ -18,7 +18,7 @@ const submit = () => {
 
 <template>
     <section class="container forms">
-        <Particles/>
+<!--        <Particles/>-->
 
         <Link :href="route('home')" class="back-button">
             Back to Home
