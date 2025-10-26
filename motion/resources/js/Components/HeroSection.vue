@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="hero-buttons">
-                    <a @click="goToProductsPage()" class="btn-primary">Find GlowMotion lights for Your Car</a>
+                    <a href="#" @click="goToProductsPage()" class="btn-primary">Find GlowMotion lights for Your Car</a>
                     <a href="#" class="btn-secondary">Read Customer Reviews</a>
                 </div>
             </div>
